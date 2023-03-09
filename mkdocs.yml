@@ -1,0 +1,36 @@
+site_name: MORAI SIM Air - Cirrus
+site_url: https://morai-docs.github.io/simair-cirrus
+site_description: Project documentation with Markdown.
+site_author: MORAI Engineering Service Team
+
+repo_url: https://github.com/morai-docs/simair-cirrus
+edit_uri: blob/main/docs/
+
+nav:
+  - Home: index.md
+  - Release Note: '../'
+  
+theme: 
+  name: readthedocs
+  locale: en
+  #custom_dir: custom_theme
+
+
+extra_css: [custom.css]
+
+markdown_extensions:
+  - smarty
+  - toc:
+      permalink: 
+  - attr_list
+  - def_list
+  - tables
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+copyright: Copyright &copy; 2023 <a href="https://www.morai.ai">MORAI Inc.</a> Maintained by the <a href="https://github.com/morai-docs">MORAI-Docs Team</a>
+
+remote_branch: main
+#  features:
+#    - navigation.expand
+#  name: material
