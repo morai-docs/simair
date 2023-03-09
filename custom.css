@@ -36,10 +36,15 @@
 }
 
 
+.wy-side-nav-search > a:active,
+.wy-side-nav-search .wy-dropdown > a:active {
+    background-color: var(#4070a0);
+}
+
+
 .wy-menu-vertical a {
   color: var(#4070a0);
 }
-
 
 .wy-menu-vertical a:hover {
   background-color: var(#4070a0);
