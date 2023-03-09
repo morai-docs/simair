@@ -104,3 +104,5 @@ Deprecated config option classes: `ConfigItems` (#2983), `OptionallyRequired` (#
 
 
 ## Previous Versions
+
+NOTE: This release has big changes to the implementation of plugins and their configs. But, the intention is to have zero breaking changes in all reasonably common use cases. Or at the very least if a code fix is required, there should always be a way to stay compatible with older MkDocs versions. Please report if this release breaks something.

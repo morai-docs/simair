@@ -20,18 +20,21 @@ nav:
   - Gettign Started: 
     - Installation: getting-started/getting-started.md
     - User Interface: getting-started/ui.md
-  - Using MORAI SIM Air:
+
+  - Using MORAI SIM Air: 
+    - User Guide: user-guide/
     - Basic Controls: user-guide/basic-controls.md
     - Network Configurations: user-guide/network.md
     - Sensor Setting: user-guide/sensors.md
     - Useful Functions: user-guide/useful.md
   
-  # - Configurations: ../
+
 
 
 theme: 
   name: readthedocs
   locale: en
+  highlightjs: true
   #custom_dir: custom_theme
 
 
@@ -41,6 +44,8 @@ markdown_extensions:
   - smarty
   - toc:
       permalink: 
+  - admonition: {}
+  - sane_lists
   - attr_list
   - def_list
   - tables
