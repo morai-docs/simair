@@ -14,14 +14,15 @@ nav:
     - Revision History: about/revision-history.md
     - Overview: about/overview.md
     - Terminology and Conventions: about/terms-conventions.md
+    
   - Introduction: 
-    - About Morai SIM Air: intro/introduction.md
+    - About Morai SIM Air: intro/morai-simair.md
 
   - Gettign Started: 
-    - Installation: getting-started/getting-started.md
+    - Installation: getting-started/installation.md
     - User Interface: getting-started/ui.md
 
-  - Using MORAI SIM Air: 
+  - Using MORAI SIM Air:
     - User Guide: user-guide/
     - Basic Controls: user-guide/basic-controls.md
     - Network Configurations: user-guide/network.md

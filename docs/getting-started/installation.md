@@ -1,4 +1,4 @@
-# Getting Started with MORAI SIM Air
+# MORAI SIM AIR Installation
 
 For Latest and Previous versions
 
