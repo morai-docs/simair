@@ -1,0 +1,86 @@
+/**
+ * Various tweaks to the Read the Docs theme to better conform with Godot's
+ * visual identity. Many colors are also overridden to use CSS variables.
+ * This makes it possible to provide an automatically-used dark theme
+ * based on browser preferences.
+ */
+
+ /* Default (light) theme colors */
+ 
+/* Main sections */
+
+
+
+.wy-nav-content {
+    /*230303 Enlage main section*/
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    padding-right: 10%;
+    margin-right: 10%;
+    overflow: scroll;
+}
+
+.wy-body-for-nav {
+  /*1118*/
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.wy-side-nav-search > a:active,
+.wy-side-nav-search .wy-dropdown > a:active {
+    background-color: var(#4070a0);
+}
+
+
+.wy-menu-vertical a {
+  color: var(#4070a0);
+}
+
+
+.wy-menu-vertical a:hover {
+  background-color: var(#4070a0);
+  color: var(#4070a0);
+}
+
+.wy-menu-vertical a:active {
+  background-color: var(#4070a0);
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:active span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:active span.toctree-expand {
+    color: var(#4070a0);
+    opacity: 1;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
+    color: var(#4070a0);
+    opacity: 1;
+}
+
+.wy-menu-vertical li.current a,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    background-color: var(#4070a0);
+    color: var(#4070a0);
+    border-color: var(#4070a0);
+}
+
+.wy-menu-vertical li.current a:hover,
+.wy-menu-vertical li.toctree-l2.current > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
+    background-color: var(#4070a0);
+}
+
+.wy-menu-vertical li.current a:active,
+.wy-menu-vertical li.toctree-l2.current > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:active {
+    background-color: var(#4070a0);
+}
