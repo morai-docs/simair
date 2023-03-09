@@ -8,8 +8,27 @@ edit_uri: blob/main/docs/
 
 nav:
   - Home: index.md
-  - Release Note: '../'
+  - Release Note: release-notes.md
+
+  - About this Documents:
+    - Revision History: about/revision-history.md
+    - Overview: about/overview.md
+    - Terminology and Conventions: about/terms-conventions.md
+  - Introduction: 
+    - About Morai SIM Air: intro/introduction.md
+
+  - Gettign Started: 
+    - Installation: getting-started/getting-started.md
+    - User Interface: getting-started/ui.md
+  - Using MORAI SIM Air:
+    - Basic Controls: user-guide/basic-controls.md
+    - Network Configurations: user-guide/network.md
+    - Sensor Setting: user-guide/sensors.md
+    - Useful Functions: user-guide/useful.md
   
+  # - Configurations: ../
+
+
 theme: 
   name: readthedocs
   locale: en
@@ -30,7 +49,8 @@ markdown_extensions:
 
 copyright: Copyright &copy; 2023 <a href="https://www.morai.ai">MORAI Inc.</a> Maintained by the <a href="https://github.com/morai-docs">MORAI-Docs Team</a>
 
-remote_branch: main
+# remote_branch: main
+
 #  features:
 #    - navigation.expand
 #  name: material
