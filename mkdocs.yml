@@ -14,7 +14,7 @@ nav:
     - Revision History: about/revision-history.md
     - Overview: about/overview.md
     - Terminology and Conventions: about/terms-conventions.md
-    
+
   - Introduction: 
     - About Morai SIM Air: intro/morai-simair.md
 
@@ -23,7 +23,7 @@ nav:
     - User Interface: getting-started/ui.md
 
   - Using MORAI SIM Air:
-    - User Guide: user-guide/
+    #- User Guide: user-guide/
     - Basic Controls: user-guide/basic-controls.md
     - Network Configurations: user-guide/network.md
     - Sensor Setting: user-guide/sensors.md
@@ -31,15 +31,25 @@ nav:
   
 
 
-
 theme: 
   name: readthedocs
   locale: en
   highlightjs: true
   #custom_dir: custom_theme
+  hljs_languages:
+      - yaml
 
+extra_html:
+  - callout_tip.html
+  - _includes/callout_tip.html
+  - callout.html
+  - _includes/callout.html
 
-extra_css: [custom.css]
+extra_css: 
+  - custom.css
+  - css/extra.css
+  - css/theme_extra.css
+
 
 markdown_extensions:
   - smarty
@@ -50,13 +60,39 @@ markdown_extensions:
   - attr_list
   - def_list
   - tables
+  - pymdownx.highlight:
+      use_pygments: false
   - pymdownx.snippets
   - pymdownx.superfences
 
+
+
 copyright: Copyright &copy; 2023 <a href="https://www.morai.ai">MORAI Inc.</a> Maintained by the <a href="https://github.com/morai-docs">MORAI-Docs Team</a>
+
+plugins:
+  - search
+  - autorefs
+  - callouts
+  - literate-nav:
+      nav_file: README.md
+      implicit_index: true
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_section_style: list
+            members_order: source
+            show_root_heading: true
+            show_source: false
+            show_signature_annotations: true
+
+    
 
 # remote_branch: main
 
 #  features:
 #    - navigation.expand
 #  name: material
+
+watch:
+  - docs

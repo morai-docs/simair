@@ -2,6 +2,8 @@
 
 For Latest and Previous versions
 
+{:toc}
+
 ---
 
 ## Latest
