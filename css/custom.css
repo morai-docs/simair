@@ -1,0 +1,321 @@
+/**
+ * Various tweaks to the Read the Docs theme to better conform with Godot's
+ * visual identity. Many colors are also overridden to use CSS variables.
+ * This makes it possible to provide an automatically-used dark theme
+ * based on browser preferences.
+ */
+
+ /* Default (light) theme colors */
+ 
+/* Main sections */
+
+
+
+.wy-nav-content {
+    /*230303 Enlage main section*/
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    padding-right: 10%;
+    margin-right: 10%;
+    overflow: scroll;
+}
+
+.wy-body-for-nav {
+  /*1118*/
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.wy-side-nav-search > a:active,
+.wy-side-nav-search .wy-dropdown > a:active {
+    background-color: var(#4070a0);
+}
+
+
+.wy-side-nav-search > a:active,
+.wy-side-nav-search .wy-dropdown > a:active {
+    background-color: var(#4070a0);
+}
+
+
+.wy-menu-vertical a {
+  color: var(#4070a0);
+}
+
+.wy-menu-vertical a:hover {
+  background-color: var(#4070a0);
+  color: var(#4070a0);
+}
+
+.wy-menu-vertical a:active {
+  background-color: var(#4070a0);
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:active span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:active span.toctree-expand {
+    color: var(#4070a0);
+    opacity: 1;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
+    color: var(#4070a0);
+    opacity: 1;
+}
+
+.wy-menu-vertical li.current a,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    background-color: var(#4070a0);
+    color: var(#4070a0);
+    border-color: var(#4070a0);
+}
+
+.wy-menu-vertical li.current a:hover,
+.wy-menu-vertical li.toctree-l2.current > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
+    background-color: var(#4070a0);
+}
+
+.wy-menu-vertical li.current a:active,
+.wy-menu-vertical li.toctree-l2.current > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:active {
+    background-color: var(#4070a0);
+}
+
+/* callout styles*/
+
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  /*border: 1px solid rgb(214, 217, 215);*/
+  border-left-width: 5px;
+  border-radius: 3px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.calloutTitle {
+  margin-top: 0;
+  margin-bottom: 5px;
+  /*font-size: 18px;*/
+}
+
+.suc-calloutTitle {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 2;
+  color: #05b105;
+}
+
+
+.not-calloutTitle {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 2;
+  color: #247CFF;
+}
+
+.dan-calloutTitle {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 2;
+  color: #d9534f;
+}
+
+
+
+
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.bs-callout code {
+  border-radius: 3px;
+}
+
+.bs-callout+.bs-callout {
+  margin-top: -5px;
+}
+
+.bs-callout-default {
+  border-left-color: #7777;
+}
+
+.bs-callout-default .calloutTitle {
+  color: #0c0b0b;
+}
+
+.bs-callout-primary {
+  border-left-color: #428bca;
+  background-color: #eef7fa;
+  color: #0c0b0b;
+}
+
+.bs-callout-danger {
+  border-left-color:#d9534f;
+  background-color: #fcefe9;
+  color: #0c0b0b;
+}
+
+.bs-callout-success {
+  border-left-color:#5cb85c;
+  background-color: #f3f7e8;
+  color: #0c0b0b;
+}
+
+.bs-callout-primary .calloutTitle {
+  color: #428bca;
+}
+
+.bs-callout-success .calloutTitle {
+  color: #5cb85c;
+}
+
+.bs-callout-danger .calloutTitle {
+  color: #d9534f;
+}
+.bs-callout-warning {
+  border-left-color:#f0ad4e;
+}
+.bs-callout-warning .calloutTitle {
+  color: #f0ad4e;
+}
+.bs-callout-info {
+  border-left-color:#5bc0de;
+}
+.bs-callout-info .calloutTitle {
+  color: #5bc0de;
+}
+
+.alert code {
+  background: transparent;
+}
+
+
+blockquote {
+    background-color: #eef7fa; /*#eef7fa*/
+    font-family: roboto;
+    margin: 0px;
+    padding: 1em;
+}
+
+
+p.note {
+    background: #f1f1f1;
+    padding: 1em;
+    border-left: 1em solid orange;
+    overflow: auto;
+}
+
+p.takeaway {
+    background: #f1f1f1;
+    padding: 1em;
+    border-left: 1em solid purple;
+    overflow: auto;
+}
+
+p.survey {
+  background: #f1f1f1;
+  padding: 1em;
+  border-left: 1em solid orange;
+}
+
+p.tip {
+    background: #f1f1f1;
+    padding: 1em;
+    border-left: 1em solid deepskyblue;
+    overflow: auto;
+}
+
+p.warning {
+    background: #f1f1f1;
+    padding: 1em;
+    border-left: 1em solid red;
+    overflow: auto;
+}
+
+p.note::before {
+    content: "Note: ";
+    font-weight: bold;
+}
+
+p.takeaway::before {
+    content: "Takeaway: ";
+    font-weight: bold;
+}
+
+p.workshop::before {
+    content: "Workshop: ";
+    font-weight: bold;
+}
+
+p.tip::before {
+    content: "Tip: ";
+    font-weight: bold;
+}
+
+p.warning::before {
+    content: "Warning: ";
+    font-weight: bold;
+}
+
+.alert {
+  font-size: 1.6rem;
+}
+/* end callout styles*/
+
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1
+}
+
+.alert-info hr {
+  border-top-color: #a6e1ec
+}
+
+.alert-info .alert-link {
+  color: #245269
+}
+
+pre {
+  font-size: 16px;
+}
+
+p pre
+{
+  font-size: 16px;
+}
+
+/* Keyboard shortcuts tweaks */
+kbd, .kbd {
+  background-color: var(--kbd-background-color);
+  border: 1px solid var(--kbd-outline-color);
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 var(--kbd-shadow-color);
+  color: var(--kbd-text-color);
+  display: inline-block;
+  font-size: 14px;
+  line-height: 11px;
+  padding: 4px 5px;
+  vertical-align: middle;
+}

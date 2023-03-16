@@ -6,10 +6,20 @@
  * https://github.com/mkdocs/mkdocs/issues/233
  * https://github.com/mkdocs/mkdocs/issues/834
  */
-.rst-content code {
+
+ .rst-content p {
+    font-size: 18px; /*230316*/
+ }
+
+ .rst-content blockquote {
+    font-size: 16px; /*230316*/
+ }
+
+ .rst-content code {
     white-space: pre-wrap;
     word-wrap: break-word;
     padding: 2px 5px;
+    font-size: 14px;
 }
 
 /**
@@ -25,7 +35,7 @@
     word-wrap: normal;
     display: block;
     padding: 12px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 /**
@@ -139,6 +149,9 @@ td, th {
     border-collapse: collapse;
 }
 
+.rst-content table {
+    font-size: 110%; /*230316*/
+}
 /*
  * Without the following amendments, the navigation in the theme will be
  * slightly cut off. This is due to the fact that the .wy-nav-side has a
