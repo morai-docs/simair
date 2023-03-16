@@ -74,6 +74,7 @@ body.homepage>div.container>div.row>div.col-md-9 {
 
 .doc-contents .field-body p:first-of-type {
     display: inline;
+    font-size: 18px;
 }
 
 .doc-label-class-attribute {

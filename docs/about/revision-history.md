@@ -1,9 +1,12 @@
 # Revision History
+This section describes the revision history of the document in chronological order.
 
-This doucument's revision history is as follows:
+---
 
-| Markdown file   | Old URL              | New URL        |
-| --------------- | -------------------- | -------------- |
-| `index.md`      | `index.html`         | `index.html`   |
-| `foo.md`        | `foo/index.html`     | `foo.html`     |
-| `foo/bar.md`    | `foo/bar/index.html` | `foo/bar.html` |
+|  Doc Version    | Product Version      |   Release Date | Descriptions  | Author |
+| --------------- | :--------------------| -------------- | ------------- | ------ |
+| 1.0             |                      |                |               | MORAI Engineering Service Team |
+
+
+
+

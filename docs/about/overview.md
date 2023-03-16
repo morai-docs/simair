@@ -1,16 +1,19 @@
-# Documents Overview
+# Document Overview
+This section describes the purpose, target audiences, and scope of this document.
 
-The purpose, target audiences, and scope of this document is as follows:
+---
+
+<br>
 
 ## Purpose
+This document is written to guide the configuration environment and usage of ‘MORAI SIM: Air’, an autonomous flight simulation platform developed by Morai.
+
+<br>
 
 ## Target Audience
+This document is written for aeronautical developers and researchers who want to verify air vehicles in various simulated virtual environments.
+
+<br>
 
 ## Scope
-
-
-| Markdown file   | Old URL              | New URL        |
-| --------------- | -------------------- | -------------- |
-| `index.md`      | `index.html`         | `index.html`   |
-| `foo.md`        | `foo/index.html`     | `foo.html`     |
-| `foo/bar.md`    | `foo/bar/index.html` | `foo/bar.html` |
+The scope of application of this document applies to the configuration environment and user interface of MORAI SIM: Air, and all functions provided by MORAI SIM: Air.

@@ -1,24 +1,50 @@
 # Terminology and Conventions
+This section describes key terms and conventions commonly used in the document.
+
+---
+<br>
 
 ## Terminology
-The main teminology used for this documents is as follows:
+The key Terms and Abbreviations used in this documents are listed below:
 
-| Old Variable Name | New Variable Name or Expression        |
-| ----------------- | -------------------------------------- |
-| current_page      | page                                   |
-| include_nav       | nav&#124;length&gt;1                   |
-| include_next_prev | (page.next_page or page.previous_page) |
-| site_name         | config.site_name                       |
-| site_author       | config.site_author                     |
-| page_description  | config.site_description                |
-| repo_url          | config.repo_url                        |
-| repo_name         | config.repo_name                       |
-| site_url          | config.site_url                        |
-| copyright         | config.copyright                       |
-| google_analytics  | config.google_analytics                |
-| homepage_url      | nav.homepage.url                       |
-| favicon           | {{ base_url }}/img/favicon.ico         |
+| Terms and Abbreviations | Descriptions                           |
+| ----------------------- | -------------------------------------- |
+| Ego Vehicle             | Control flight target aircraft in the simulator |
+| NPC Vehicle             | Surrounding aircraft that are not controlled flight targets in the simulator |
+| ROS2                    | The latest version of Robot Operating System(ROS) |
+| JSBSim                  | An open source, multi-platform, object-oriented flight dynamics model (FDM) framework written in the C++ programming language |
+| AOA                     | Angle of Attack, unit: degrees                     |
+| CAS                     | Calibrated Airspeed, unit: knots            |
+| GS                      | Ground Speed, unit: knots                |
+| Attitude Indicator      | Shows the altitude of the aircrafte                       |
+| Altimeter               | Shows the altitude of the aircraft above ground level(AGL) in feet                        |
+| Vertical Speed Indicator | Shows the vertical speed of the aircraft in feet per minute                      |
 
+<Br>
 
 ## Conventions
-The main teminology used for this documents is as follows:
+The notational conventions for notes, warnings, and tips used in this document are as follows:
+
+
+<div markdown="span" class="bs-callout bs-callout-primary">
+ℹ️ <span class = "not-calloutTitle"> NOTE </span> <br>
+General Information for related matters.
+</div>
+
+<br>
+<!-- -->
+
+<div markdown="span" class="bs-callout bs-callout-danger">
+⚠️  <span class = "dan-calloutTitle"> WARNING </span> <br>
+For matters you should follow when setting or configuration
+</div>
+
+<br>
+
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+Useful tips when setting or configuration
+</div>
+
+<br>
+<br>
