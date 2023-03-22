@@ -1,5 +1,5 @@
 # Release Notes
-This section describes the additions, changes, and bug fixes reflected in **MORAI SIM: AIR** by latest and previous versions.
+This section describes the additions, changes, and bug fixes reflected in **MORAI SIM: Air** by latest and previous versions.
 
 ---
 <br>
@@ -8,7 +8,7 @@ This section describes the additions, changes, and bug fixes reflected in **MORA
 
 |  Version        |  Additions and Changes                   | Bug Fixes   | 
 | --------------- | :--------------------------------------- | ----------- |
-| 1.0             | Initial distribution                     |             | 
+|  Alpha 1.0      | Initial distribution                     |             | 
 
 <br>
 

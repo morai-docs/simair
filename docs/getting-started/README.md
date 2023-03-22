@@ -1,6 +1,4 @@
 # Getting Startged with MORAI SIM: AIR
 
-**Table of Contents**
-
-- [Installation](getting-started.md)
+- [Installation](installation.md)
 - [User Interface](ui.md)

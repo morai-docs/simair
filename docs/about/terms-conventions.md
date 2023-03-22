@@ -2,7 +2,6 @@
 This section describes key terms and conventions commonly used in the document.
 
 ---
-<br>
 
 ## Terminology
 The key Terms and Abbreviations used in this documents are listed below:
@@ -20,11 +19,8 @@ The key Terms and Abbreviations used in this documents are listed below:
 | Altimeter               | Shows the altitude of the aircraft above ground level(AGL) in feet                        |
 | Vertical Speed Indicator | Shows the vertical speed of the aircraft in feet per minute                      |
 
-<Br>
-
 ## Conventions
 The notational conventions for notes, warnings, and tips used in this document are as follows:
-
 
 <div markdown="span" class="bs-callout bs-callout-primary">
 ℹ️ <span class = "not-calloutTitle"> NOTE </span> <br>
@@ -46,5 +42,4 @@ For matters you should follow when setting or configuration
 Useful tips when setting or configuration
 </div>
 
-<br>
 <br>

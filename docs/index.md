@@ -1,5 +1,5 @@
 # Welcome to MORAI SIM Air Documentation 👍
-This document is a user guide for **MORAI SIM: AiR** Beta version provided to [CIRRUS AIRCRAGT](https://cirrusaircraft.com)
+This document is a user guide for **MORAI SIM: AiR** Alpha version provided to [CIRRUS AIRCRAGT](https://cirrusaircraft.com)
 
 
 Take a look the [MORAI SIM: Air]'s concept and features.  <br>
@@ -85,3 +85,8 @@ Start MORAI SIM: Air by reading the **[introductory tutorial]**, then check the 
 > However, when a theme is [packaged] up for distribution, and loaded using
 > the `theme.name` configuration option, then a `mkdocs_theme.yml` file
 > is required for the theme.
+
+<figure>
+  <img src="./img/Default_Layout_Sensor.png" alt="sensor" style="width:50%; height:70%;"/>
+  <figcaption>고양이 사진</figcaption>
+</figure>

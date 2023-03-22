@@ -16,10 +16,10 @@ nav:
     - about/terms-conventions.md
 
   - Introduction: 
-    - About Morai SIM Air: intro/morai-simair.md
+    - intro/morai-simair.md
 
   - Gettign Started: 
-    - Installation: getting-started/installation.md
+    - getting-started/installation.md
     - User Interface: getting-started/ui.md
 
   - Using MORAI SIM Air:

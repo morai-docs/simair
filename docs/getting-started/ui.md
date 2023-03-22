@@ -1,10 +1,27 @@
 # User Interface
 
-For Latest and Previous versions
+This section discribes an overview of the MORAI SIM: Air user interface (UI) and provides the detailed information on each UI component.
 
 ---
 
-## overview
+## UI Overview
+
+The main UI of MORAI SIM: Air is designed to provide users with easy access to all necessary information and controls, allowing for a realistic and immersive simulation experience. <br>
+
+As shown below, the basic user interface (UI) consists of network and sensor menu, environment setting menu, and four indicators that indicate the instrument information of the aircraft, centering on the map and aircraft selected in the previous step.
+
+### 1] Menu Bar
+The menu bar is located in the upper left corner of the screen and provides access to the core features provided by the simulator, such as networks and sensors.
+
+### 2] Environment Settings
+Environment settings exist at the top right of the screen, and select the weather and time zone that determine the background and illumination of the simulator.
+
+### 3] Flight Instruments
+The flight instrument provides real-time flight information such as the current heading, air speed, attitude, and altitude of the aircraft.
+
+## Flight Information UI
+
+
 
 To upgrade MkDocs to the latest version, use pip:
 
