@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="MORAI Engineering Service Team" /><link rel="canonical" href="https://morai-docs.github.io/simair-cirrus/intro/morai-simair/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>About Morai SIM Air - MORAI SIM Air - Cirrus</title>
+    <title>About MORAI SIM: Air - MORAI SIM Air - Cirrus</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -16,7 +16,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "About Morai SIM Air";
+        var mkdocs_page_name = "About MORAI SIM: Air";
         var mkdocs_page_input_path = "intro\\morai-simair.md";
         var mkdocs_page_url = "/simair-cirrus/intro/morai-simair/";
       </script>
@@ -64,25 +64,19 @@
               </ul>
               <p class="caption"><span class="caption-text">Introduction</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">About Morai SIM Air</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">About MORAI SIM: Air</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#latest">Latest</a>
+    <li class="toctree-l2"><a class="reference internal" href="#concept-and-key-features">Concept and Key Features</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#version-10-2023-03-20">Version 1.0 (2023-03-20)</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#customize-event-order-for-plugin-event-handlers-2973">Customize event order for plugin event handlers (#2973)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#simulation-environment-based-on-unreal-engine">Simulation environment based on Unreal Engine</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#new-events-that-persist-across-builds-in-mkdocs-serve-2972">New events that persist across builds in mkdocs serve (#2972)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#supports-realistic-flight-dynamics-model-and-6-dof">Supports realistic flight dynamics model and 6 DOF</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#replace-filesrc_path-to-not-deal-with-backslashes-2930">Replace File.src_path to not deal with backslashes (#2930)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#reproduces-weather-and-time-variation-with-dynamic-environment">Reproduces weather and time variation with dynamic environment</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#other-changes-to-config-options">Other changes to config options</a>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-external-sensors-and-real-time-communication">Integration with external sensors and real-time communication</a>
     </li>
         </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#previous-versions">Previous Versions</a>
     </li>
     </ul>
                   </li>
@@ -120,7 +114,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Introduction &raquo;</li>
-      <li>About Morai SIM Air</li>
+      <li>About MORAI SIM: Air</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/morai-docs/simair-cirrus/blob/main/docs/intro/morai-simair.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -130,76 +124,64 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="about-morai-sim-air">About MORAI SIM Air<a class="headerlink" href="#about-morai-sim-air" title="Permanent link"></a></h1>
-<p>For Latest and Previous versions</p>
+                <h1 id="about-morai-sim-air">About MORAI SIM: Air<a class="headerlink" href="#about-morai-sim-air" title="Permanent link"></a></h1>
+<p>This section explains the concept and features of <strong>MORAI SIM: Air</strong> and the configuration environment.</p>
 <hr />
-<h2 id="latest">Latest<a class="headerlink" href="#latest" title="Permanent link"></a></h2>
-<p>To upgrade MkDocs to the latest version, use pip:</p>
-<pre class="highlight"><code class="language-bash">pip install -U mkdocs</code></pre>
-<p>You can determine your currently installed version using <code>mkdocs --version</code>:</p>
-<pre class="highlight"><code class="language-console">$ mkdocs --version
-mkdocs, version 1.0 from /path/to/mkdocs (Python 3.6)</code></pre>
-<h3 id="version-10-2023-03-20">Version 1.0 (2023-03-20)<a class="headerlink" href="#version-10-2023-03-20" title="Permanent link"></a></h3>
+<h2 id="concept-and-key-features">Concept and Key Features<a class="headerlink" href="#concept-and-key-features" title="Permanent link"></a></h2>
+<p>MORAI SIM: Air is a simulation platform that can verify autonomous flight systems used in various industries such as Urban Air Mobility (UAM), unmanned aerial vehicles (Drones), and light aircraft in a virtual environment.
+<br></p>
+<p>MORAI SIM: Air provides a variety of real flight environments as virtual simulations using Digital Twin technology, so the safety of the aircraft can be verified more efficiently and accurately.
+And it reporduces actual flight facilities such as vertical take-off and landing facilities (vertiport) and airports for vehicle verification as a digital twin environment, and simulates the actual measurement data provided to the aircraft from each facility as it is. <br>
+MORAI SIM: Air virtualizes various sensors and flight dynamics model (FDM) specialized for the aviation industry, and can transmit and receive data in real-time by applying communication such as <a href="https://docs.ros.org/en/rolling/index.html">ROS2</a> and <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a>. <Br></p>
+<p>The main features of <strong>MORAI SIM: Air</strong> are as follows.</p>
+<blockquote>
 <ul>
-<li>
-<p>Officially support Python 3.11 (#3020)</p>
-<p>NEW: <strong>Tip:</strong> Simply upgrading to Python 3.11 can cut off 10-15% of your site's build time.</p>
-</li>
-<li>
-<p>Support multiple instances of the same plugin (#3027)</p>
-<p>If a plugin is specified multiple times in the list under the <code>plugins:</code> config, that will create 2 (or more) instances of the plugin with their own config each.</p>
-<p>Previously this case was unforeseen and, as such, bugged.</p>
-<p>Now even though this works, by default a warning will appear from MkDocs anyway, unless the plugin adds a class variable <code>supports_multiple_instances = True</code>.</p>
-</li>
-<li>
-<p>Bugfix (regression in 1.4.1): Don't error when a plugin puts a plain string into <code>warnings</code> (#3016)</p>
-</li>
-<li>
-<p>Bugfix: Relative links will always render with a trailing slash (#3022)</p>
-<p>Previously under <code>use_directory_urls</code>, links <em>from</em> a sub-page <em>to</em> the main index page rendered as e.g. <code>&lt;a href="../.."&gt;</code> even though in all other cases the links look like <code>&lt;a href="../../"&gt;</code>. This caused unwanted behavior on some combinations of Web browsers and servers. Now this special-case bug was removed.</p>
-</li>
-<li>
-<p>Built-in "mkdocs" theme now also supports Norwegian language (#3024)</p>
-</li>
-<li>
-<p>Plugin-related warnings look more readable (#3016)</p>
-</li>
+<li>Provides a simulation environment based on <a href="https://en.wikipedia.org/wiki/Unreal_Engine">Unreal Engine</a>, a physics engine </li>
+<li>Supports realistic flight dynamics model (FDM) for <a href="https://sketchfab.com/3d-models/cirrus-sr-22-f0f1089f374f4d398f0483403fe6af7a">Cirrus SR22</a> and 6 degrees of freedom (DOF) data</li>
+<li>Supports realistic flight dynamics model (FDM) developed with <a href="https://jsbsim.sourceforge.net/JSBSim/index.html">JSBSim</a>, and 6 degrees of freedom (DOF) data</li>
+<li>Reproduces weather and time variation with dynamic environment</li>
+<li>Integration with external sensors and systems: Cameras, GNSS, IMU, RADAR, 3D LiDAR</li>
+<li>Supports real-time transmission of flight status messages and sensor data through ROS2 and UDP communication</li>
 </ul>
-<p>See <a href="https://github.com/mkdocs/mkdocs/compare/1.4.1...1.4.2">commit log</a>.</p>
-<h4 id="customize-event-order-for-plugin-event-handlers-2973">Customize event order for plugin event handlers (#2973)<a class="headerlink" href="#customize-event-order-for-plugin-event-handlers-2973" title="Permanent link"></a></h4>
-<p>Plugins can now choose to set a priority value for their event handlers. This can override the old behavior where for each event type, the handlers are called in the order that their plugins appear in the <a href="../user-guide/configuration.md#plugins"><code>plugins</code> config</a>.</p>
-<p>If this is set, events with higher priority are called first. Events without a chosen priority get a default of 0. Events that have the same priority are ordered as they appear in the config.</p>
-<p>Recommended priority values: <code>100</code> "first", <code>50</code> "early", <code>0</code> "default", <code>-50</code> "late", <code>-100</code> "last".<br />
-As different plugins discover more precise relations to each other, the values should be further tweaked.</p>
-<p>See <a href="../dev-guide/plugins.md#event-priorities"><strong>documentation</strong></a>.</p>
-<h4 id="new-events-that-persist-across-builds-in-mkdocs-serve-2972">New events that persist across builds in <code>mkdocs serve</code> (#2972)<a class="headerlink" href="#new-events-that-persist-across-builds-in-mkdocs-serve-2972" title="Permanent link"></a></h4>
-<p>The new events are <code>on_startup</code> and <code>on_shutdown</code>. They run at the very beginning and very end of an <code>mkdocs</code> invocation.<br />
-<code>on_startup</code> also receives information on how <code>mkdocs</code> was invoked (e.g. <code>serve</code> <code>--dirtyreload</code>).</p>
-<p>See <a href="../dev-guide/plugins.md#events"><strong>documentation</strong></a>.</p>
-<h4 id="replace-filesrc_path-to-not-deal-with-backslashes-2930">Replace <code>File.src_path</code> to not deal with backslashes (#2930)<a class="headerlink" href="#replace-filesrc_path-to-not-deal-with-backslashes-2930" title="Permanent link"></a></h4>
-<p>The property <code>src_path</code> uses backslashes on Windows, which doesn't make sense as it's a virtual path.<br />
-To not make a breaking change, there's no change to how <em>this</em> property is used, but now you should:</p>
-<ul>
-<li>Use <strong><code>File.src_uri</code></strong> instead of <code>File.src_path</code></li>
-<li>and <strong><code>File.dest_uri</code></strong> instead of <code>File.dest_path</code>.</li>
-</ul>
-<p>See more <a href="../dev-guide/plugins.md#examples-of-config-definitions">examples in <strong>documentation</strong></a>.</p>
-<h5 id="updated-config_optionssubconfig-2807">Updated: <code>config_options.SubConfig</code> (#2807)<a class="headerlink" href="#updated-config_optionssubconfig-2807" title="Permanent link"></a></h5>
-<p><code>SubConfig</code> used to silently ignore all validation of its config options. Now you should pass <code>validate=True</code> to it or just use new class-based configs where this became the default.</p>
-<p>So, it can be used to validate a nested sub-dict with all keys pre-defined and value types strictly validated.</p>
-<p>See <a href="../dev-guide/plugins.md#examples-of-config-definitions">examples in <strong>documentation</strong></a>.</p>
-<h4 id="other-changes-to-config-options">Other changes to config options<a class="headerlink" href="#other-changes-to-config-options" title="Permanent link"></a></h4>
-<p><code>URL</code>'s default is now <code>None</code> instead of <code>''</code>. This can still be checked for truthiness in the same way - <code>if config.some_url:</code> (#2962)</p>
-<p><code>FilesystemObject</code> is no longer abstract and can be used directly, standing for "file or directory" with optional existence checking (#2938)</p>
-<p>Bug fixes:</p>
-<ul>
-<li>Fix <code>SubConfig</code>, <code>ConfigItems</code>, <code>MarkdownExtensions</code> to not leak values across different instances (#2916, #2290)</li>
-<li><code>SubConfig</code> raises the correct kind of validation error without a stack trace (#2938)</li>
-<li>Fix dot-separated redirect in <code>config_options.Deprecated(moved_to)</code> (#2963)</li>
-</ul>
-<p>Tweaked logic for handling <code>ConfigOption.default</code> (#2938)</p>
-<p>Deprecated config option classes: <code>ConfigItems</code> (#2983), <code>OptionallyRequired</code> (#2962), <code>RepoURL</code> (#2927)</p>
-<h2 id="previous-versions">Previous Versions<a class="headerlink" href="#previous-versions" title="Permanent link"></a></h2>
+</blockquote>
+<h3 id="simulation-environment-based-on-unreal-engine">Simulation environment based on Unreal Engine<a class="headerlink" href="#simulation-environment-based-on-unreal-engine" title="Permanent link"></a></h3>
+<p><strong>MORAI SIM: Air</strong> utilizes the physics engine, Unreal Engine to provide a high-fidelity simulation environment for autonomous aerial vehicles, and it can reproduce object movement, physical conditions such as collision and penetration, as well as color and texture realistically.
+<br></p>
+<p>The Unreal engine allows for the creation of highly detailed 3D environments and provides a sophisticated physics engine that can simulate the behavior of objects in a realistic manner. This means that the movement of the aerial vehicles, as well as other objects in the simulation environment, are accurately represented.
+<br></p>
+<p>Moreover, the Unreal engine can render textures and colors realistically, which helps to create a more immersive simulation experience for users. This allows users to visualize and interact with the simulation environment in a way that closely mirrors the real-world environment, and enables them to test and validate the performance of their autonomous flight systems under realistic conditions.</p>
+<figure>
+    <img src="../../img/into-duluth.png" alt="sensor">
+    <figcaption style="padding-top: 10px;"><b> Figure 1. 3D Simulation environment for Duluth airport provided by MORAI SIM: Air</b></figcaption>
+</figure>
+
+<h3 id="supports-realistic-flight-dynamics-model-and-6-dof">Supports realistic flight dynamics model and 6 DOF<a class="headerlink" href="#supports-realistic-flight-dynamics-model-and-6-dof" title="Permanent link"></a></h3>
+<p>MORAI SIM: Air supports realistic flight dynamics models (FDM) based on <a href="https://jsbsim.sourceforge.net/JSBSim/index.html">JSBsim</a> for simulation modeling of the behavior of aircraft engines and other systems.<br> 
+Additionally, MORAI SIM: Air implements the <a href="https://sketchfab.com/3d-models/cirrus-sr-22-f0f1089f374f4d398f0483403fe6af7a">Cirrus SR22</a> aircraft model and 6 degrees of freedom (DOF) data, providing a realistic simulation experience.</p>
+<video controls>
+  <source src="https://user-images.githubusercontent.com/120563672/226307319-c5462e1a-758f-4082-8b03-10d1062bda64.mp4">
+</video>
+<p style="font-size:16px;"><b> Figure 2. SR22 model with joystick implemented in MORAI SIM: Air</b></p>
+
+<h3 id="reproduces-weather-and-time-variation-with-dynamic-environment">Reproduces weather and time variation with dynamic environment<a class="headerlink" href="#reproduces-weather-and-time-variation-with-dynamic-environment" title="Permanent link"></a></h3>
+<p>MORAI SIM: Air also includes a simulation of the environment and weather conditions, which affect the flight behavior and performance of the aerial vehicles. This allows users to test their autonomous flight systems under different conditions and scenarios.</p>
+<video controls>
+  <source src="https://user-images.githubusercontent.com/120563672/226257559-697af30d-e705-49d4-b930-f26dd60c848d.mp4">
+</video>
+<p style="font-size:16px;"><b> Figure 3. Reproduced video of weather and time condition changes in MORAI SIM: Air </b></p>
+
+<h3 id="integration-with-external-sensors-and-real-time-communication">Integration with external sensors and real-time communication<a class="headerlink" href="#integration-with-external-sensors-and-real-time-communication" title="Permanent link"></a></h3>
+<p>MORAI SIM: Air supports integration with a variety of external sensors commonly used in autonomous flight systems, including Camera, GNSS, IMU, and RADAR sensors. This enables users to test and validate the integration and performance of their sensors and systems in a virtual environment. <br></p>
+<figure>
+    <img src="../../img/Default_Layout_Sensor.png" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)">
+    <figcaption style="padding-top: 10px;"><b> Figure 4. Sensor models provided by MORAI SIM: Air</b></figcaption>
+</figure>
+
+<p>Also, MORAI SIM: Air supports real-time communication for flight status messages and sensor data using the ROS2 and UDP communication protocols. This enables users to monitor and analyze the performance of their autonomous flight systems during the simulation in real-time.</p>
+<figure>
+    <img src="../../img/Default_NetworkSettings.png" alt="network" title="Click to Enlage" onclick="window.open(this.src)">
+    <figcaption style="padding-top: 10px;"><b> Figure 5. Network settings provided by MORAI SIM: Air </b></figcaption>
+</figure>
               
             </div>
           </div><footer>

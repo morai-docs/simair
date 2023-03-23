@@ -64,7 +64,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Introduction</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../intro/morai-simair/">About Morai SIM Air</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../intro/morai-simair/">About MORAI SIM: Air</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gettign Started</span></p>
@@ -73,23 +73,27 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">User Interface</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#overview">overview</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ui-overview">UI Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#default-ui">Default UI</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#version-10-2023-03-20">Version 1.0 (2023-03-20)</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#customize-event-order-for-plugin-event-handlers-2973">Customize event order for plugin event handlers (#2973)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#1-network-and-sensor-settings">1] Network and Sensor Settings</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#new-events-that-persist-across-builds-in-mkdocs-serve-2972">New events that persist across builds in mkdocs serve (#2972)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-environment-settings">2] Environment Settings</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#replace-filesrc_path-to-not-deal-with-backslashes-2930">Replace File.src_path to not deal with backslashes (#2930)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#other-changes-to-config-options">Other changes to config options</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-flight-instruments">3] Flight Instruments</a>
     </li>
         </ul>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#aircraft-info-ui">Aircraft Info UI</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-aircraft-control-mode">1] Aircraft Control Mode</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#previous-versions">Previous Versions</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-proopulsion">2] Proopulsion</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-flight-control">3] Flight Control</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -131,75 +135,37 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link"></a></h1>
-<p>For Latest and Previous versions</p>
+<p>This section discribes an overview of the MORAI SIM: Air user interface (UI) and provides the detailed information on each UI component.</p>
 <hr />
-<h2 id="overview">overview<a class="headerlink" href="#overview" title="Permanent link"></a></h2>
-<p>To upgrade MkDocs to the latest version, use pip:</p>
-<pre class="highlight"><code class="language-bash">pip install -U mkdocs</code></pre>
-<p>You can determine your currently installed version using <code>mkdocs --version</code>:</p>
-<pre class="highlight"><code class="language-console">$ mkdocs --version
-mkdocs, version 1.0 from /path/to/mkdocs (Python 3.6)</code></pre>
-<h3 id="version-10-2023-03-20">Version 1.0 (2023-03-20)<a class="headerlink" href="#version-10-2023-03-20" title="Permanent link"></a></h3>
-<ul>
-<li>
-<p>Officially support Python 3.11 (#3020)</p>
-<p>NEW: <strong>Tip:</strong> Simply upgrading to Python 3.11 can cut off 10-15% of your site's build time.</p>
-</li>
-<li>
-<p>Support multiple instances of the same plugin (#3027)</p>
-<p>If a plugin is specified multiple times in the list under the <code>plugins:</code> config, that will create 2 (or more) instances of the plugin with their own config each.</p>
-<p>Previously this case was unforeseen and, as such, bugged.</p>
-<p>Now even though this works, by default a warning will appear from MkDocs anyway, unless the plugin adds a class variable <code>supports_multiple_instances = True</code>.</p>
-</li>
-<li>
-<p>Bugfix (regression in 1.4.1): Don't error when a plugin puts a plain string into <code>warnings</code> (#3016)</p>
-</li>
-<li>
-<p>Bugfix: Relative links will always render with a trailing slash (#3022)</p>
-<p>Previously under <code>use_directory_urls</code>, links <em>from</em> a sub-page <em>to</em> the main index page rendered as e.g. <code>&lt;a href="../.."&gt;</code> even though in all other cases the links look like <code>&lt;a href="../../"&gt;</code>. This caused unwanted behavior on some combinations of Web browsers and servers. Now this special-case bug was removed.</p>
-</li>
-<li>
-<p>Built-in "mkdocs" theme now also supports Norwegian language (#3024)</p>
-</li>
-<li>
-<p>Plugin-related warnings look more readable (#3016)</p>
-</li>
-</ul>
-<p>See <a href="https://github.com/mkdocs/mkdocs/compare/1.4.1...1.4.2">commit log</a>.</p>
-<h4 id="customize-event-order-for-plugin-event-handlers-2973">Customize event order for plugin event handlers (#2973)<a class="headerlink" href="#customize-event-order-for-plugin-event-handlers-2973" title="Permanent link"></a></h4>
-<p>Plugins can now choose to set a priority value for their event handlers. This can override the old behavior where for each event type, the handlers are called in the order that their plugins appear in the <a href="../user-guide/configuration.md#plugins"><code>plugins</code> config</a>.</p>
-<p>If this is set, events with higher priority are called first. Events without a chosen priority get a default of 0. Events that have the same priority are ordered as they appear in the config.</p>
-<p>Recommended priority values: <code>100</code> "first", <code>50</code> "early", <code>0</code> "default", <code>-50</code> "late", <code>-100</code> "last".<br />
-As different plugins discover more precise relations to each other, the values should be further tweaked.</p>
-<p>See <a href="../dev-guide/plugins.md#event-priorities"><strong>documentation</strong></a>.</p>
-<h4 id="new-events-that-persist-across-builds-in-mkdocs-serve-2972">New events that persist across builds in <code>mkdocs serve</code> (#2972)<a class="headerlink" href="#new-events-that-persist-across-builds-in-mkdocs-serve-2972" title="Permanent link"></a></h4>
-<p>The new events are <code>on_startup</code> and <code>on_shutdown</code>. They run at the very beginning and very end of an <code>mkdocs</code> invocation.<br />
-<code>on_startup</code> also receives information on how <code>mkdocs</code> was invoked (e.g. <code>serve</code> <code>--dirtyreload</code>).</p>
-<p>See <a href="../dev-guide/plugins.md#events"><strong>documentation</strong></a>.</p>
-<h4 id="replace-filesrc_path-to-not-deal-with-backslashes-2930">Replace <code>File.src_path</code> to not deal with backslashes (#2930)<a class="headerlink" href="#replace-filesrc_path-to-not-deal-with-backslashes-2930" title="Permanent link"></a></h4>
-<p>The property <code>src_path</code> uses backslashes on Windows, which doesn't make sense as it's a virtual path.<br />
-To not make a breaking change, there's no change to how <em>this</em> property is used, but now you should:</p>
-<ul>
-<li>Use <strong><code>File.src_uri</code></strong> instead of <code>File.src_path</code></li>
-<li>and <strong><code>File.dest_uri</code></strong> instead of <code>File.dest_path</code>.</li>
-</ul>
-<p>See more <a href="../dev-guide/plugins.md#examples-of-config-definitions">examples in <strong>documentation</strong></a>.</p>
-<h5 id="updated-config_optionssubconfig-2807">Updated: <code>config_options.SubConfig</code> (#2807)<a class="headerlink" href="#updated-config_optionssubconfig-2807" title="Permanent link"></a></h5>
-<p><code>SubConfig</code> used to silently ignore all validation of its config options. Now you should pass <code>validate=True</code> to it or just use new class-based configs where this became the default.</p>
-<p>So, it can be used to validate a nested sub-dict with all keys pre-defined and value types strictly validated.</p>
-<p>See <a href="../dev-guide/plugins.md#examples-of-config-definitions">examples in <strong>documentation</strong></a>.</p>
-<h4 id="other-changes-to-config-options">Other changes to config options<a class="headerlink" href="#other-changes-to-config-options" title="Permanent link"></a></h4>
-<p><code>URL</code>'s default is now <code>None</code> instead of <code>''</code>. This can still be checked for truthiness in the same way - <code>if config.some_url:</code> (#2962)</p>
-<p><code>FilesystemObject</code> is no longer abstract and can be used directly, standing for "file or directory" with optional existence checking (#2938)</p>
-<p>Bug fixes:</p>
-<ul>
-<li>Fix <code>SubConfig</code>, <code>ConfigItems</code>, <code>MarkdownExtensions</code> to not leak values across different instances (#2916, #2290)</li>
-<li><code>SubConfig</code> raises the correct kind of validation error without a stack trace (#2938)</li>
-<li>Fix dot-separated redirect in <code>config_options.Deprecated(moved_to)</code> (#2963)</li>
-</ul>
-<p>Tweaked logic for handling <code>ConfigOption.default</code> (#2938)</p>
-<p>Deprecated config option classes: <code>ConfigItems</code> (#2983), <code>OptionallyRequired</code> (#2962), <code>RepoURL</code> (#2927)</p>
-<h2 id="previous-versions">Previous Versions<a class="headerlink" href="#previous-versions" title="Permanent link"></a></h2>
+<h2 id="ui-overview">UI Overview<a class="headerlink" href="#ui-overview" title="Permanent link"></a></h2>
+<p>The MORAI SIM: Air UI is designed to provide users with easy access to all necessary information and controls, allowing for a realistic and immersive simulation experience. <br></p>
+<p><img alt="UI전체화면" src="" /></p>
+<h2 id="default-ui">Default UI<a class="headerlink" href="#default-ui" title="Permanent link"></a></h2>
+<p>The default UI that appears as soon as you enter the simulater for the first time consists of the following three parts, centering on the map and aircraft selected in the previous step.</p>
+<p><img alt="UI디폴트화면" src="" /></p>
+<h3 id="1-network-and-sensor-settings">1] Network and Sensor Settings<a class="headerlink" href="#1-network-and-sensor-settings" title="Permanent link"></a></h3>
+<p>This menu is located in the upper left corner of the screen and provides access to the core features provided by the simulator, such as networks and sensors.</p>
+<p><img src="../../img/ui-netsen-settings1.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<h3 id="2-environment-settings">2] Environment Settings<a class="headerlink" href="#2-environment-settings" title="Permanent link"></a></h3>
+<p>Environment settings exist at the top right of the screen, and select the weather and time zone that determine the background and illumination of the simulator.</p>
+<p><img src="../../img/ui-env-settings1.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<h3 id="3-flight-instruments">3] Flight Instruments<a class="headerlink" href="#3-flight-instruments" title="Permanent link"></a></h3>
+<p>The flight instrument and provides real-time flight information such as the current heading, air speed, attitude, and altitude of the aircraft.</p>
+<p><img alt="UI기체인포flightInstruments" src="" /></p>
+<h2 id="aircraft-info-ui">Aircraft Info UI<a class="headerlink" href="#aircraft-info-ui" title="Permanent link"></a></h2>
+<p>The aircraft information UI shows the aircraft control mode and the current flight status and steering input values of the aircraft, such as speed, air pressure, control surface and attitude, in detailed numerical values. <br></p>
+<p>If you click the mouse on the Ego aircraft, the aircraft information window appears on the right side of the simulator screen as shown below.</p>
+<p><img alt="UI기체인포전체화면" src="" /></p>
+<h3 id="1-aircraft-control-mode">1] Aircraft Control Mode<a class="headerlink" href="#1-aircraft-control-mode" title="Permanent link"></a></h3>
+<p>Displays the mode to control the Ego aircraft with <strong>Manual Control Mode</strong> and <strong>Network Control Mode</strong>.</p>
+<p><img src="../../img/ui-airinfo-controlmode.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<h3 id="2-proopulsion">2] Proopulsion<a class="headerlink" href="#2-proopulsion" title="Permanent link"></a></h3>
+<p>Displays engine RPM, air speed (knots), thrust according to throttle control and manifold pressure (inHg) according to  aircraft altitude.</p>
+<p><img src="../../img/ui-airinfo-propulsion.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<h3 id="3-flight-control">3] Flight Control<a class="headerlink" href="#3-flight-control" title="Permanent link"></a></h3>
+<p>Displays the attitude value according to the flight control surfaces and trim control, and the altitude and speed values ​​according to the vertical and horizontal movement of the aircraft in detailed numerical values.</p>
+<p><img alt="UI기체인포화면flightControl " src="" /></p>
+<p>The attitude value of an aircraft can be displayed based on the control surface and trim control. The control surfaces, such as the ailerons and elevators, are used to control the roll, pitch, and yaw of the aircraft, while the trim control is used to adjust the neutral position of these surfaces. The altitude and speed values of the aircraft can be displayed in detailed numerical values based on its vertical and horizontal movement. </p>
               
             </div>
           </div><footer>

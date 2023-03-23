@@ -64,30 +64,32 @@
               </ul>
               <p class="caption"><span class="caption-text">Introduction</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../intro/morai-simair/">About Morai SIM Air</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../intro/morai-simair/">About MORAI SIM: Air</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Gettign Started</span></p>
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Installation</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#latest">Latest</a>
+    <li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#version-10-2023-03-20">Version 1.0 (2023-03-20)</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#customize-event-order-for-plugin-event-handlers-2973">Customize event order for plugin event handlers (#2973)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#minimum-specifications">Minimum specifications</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#new-events-that-persist-across-builds-in-mkdocs-serve-2972">New events that persist across builds in mkdocs serve (#2972)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#replace-filesrc_path-to-not-deal-with-backslashes-2930">Replace File.src_path to not deal with backslashes (#2930)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#other-changes-to-config-options">Other changes to config options</a>
+    <li class="toctree-l3"><a class="reference internal" href="#recommanded-specifications">Recommanded specifications</a>
     </li>
         </ul>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#running-morai-sim-air">Running MORAI SIM: Air</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-download-mirai-sim-launcher">Step 1: Download MIRAI SIM launcher</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#previous-versions">Previous Versions</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-run-the-launcher-program">Step 2: Run the launcher program</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-select-map-and-aircraft">Step 3: Select Map and Aircraft</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-4-check-the-simulator-run">Step 4: Check the simulator run</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -130,83 +132,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="morai-sim-air-installation">MORAI SIM AIR Installation<a class="headerlink" href="#morai-sim-air-installation" title="Permanent link"></a></h1>
-<p>For Latest and Previous versions</p>
-<p>{:toc}</p>
+                <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link"></a></h1>
+<p>This section describes the system requirements for installing MORAI SIM: Air and how to run it.</p>
 <hr />
-<h2 id="latest">Latest<a class="headerlink" href="#latest" title="Permanent link"></a></h2>
-<p>To upgrade MkDocs to the latest version, use pip:</p>
-<pre class="highlight"><code class="language-bash">pip install -U mkdocs</code></pre>
-<p>You can determine your currently installed version using <code>mkdocs --version</code>:</p>
-<pre class="highlight"><code class="language-console">$ mkdocs --version
-mkdocs, version 1.0 from /path/to/mkdocs (Python 3.6)</code></pre>
-<h3 id="version-10-2023-03-20">Version 1.0 (2023-03-20)<a class="headerlink" href="#version-10-2023-03-20" title="Permanent link"></a></h3>
+<h2 id="system-requirements">System Requirements<a class="headerlink" href="#system-requirements" title="Permanent link"></a></h2>
+<p>The OS environment in which MORAI SIM: Air can run is as follows.</p>
+<blockquote>
 <ul>
-<li>
-<p>Officially support Python 3.11 (#3020)</p>
-<p>NEW: <strong>Tip:</strong> Simply upgrading to Python 3.11 can cut off 10-15% of your site's build time.</p>
-</li>
-<li>
-<p>Support multiple instances of the same plugin (#3027)</p>
-<p>If a plugin is specified multiple times in the list under the <code>plugins:</code> config, that will create 2 (or more) instances of the plugin with their own config each.</p>
-<p>Previously this case was unforeseen and, as such, bugged.</p>
-<p>Now even though this works, by default a warning will appear from MkDocs anyway, unless the plugin adds a class variable <code>supports_multiple_instances = True</code>.</p>
-</li>
-<li>
-<p>Bugfix (regression in 1.4.1): Don't error when a plugin puts a plain string into <code>warnings</code> (#3016)</p>
-</li>
-<li>
-<p>Bugfix: Relative links will always render with a trailing slash (#3022)</p>
-<p>Previously under <code>use_directory_urls</code>, links <em>from</em> a sub-page <em>to</em> the main index page rendered as e.g. <code>&lt;a href="../.."&gt;</code> even though in all other cases the links look like <code>&lt;a href="../../"&gt;</code>. This caused unwanted behavior on some combinations of Web browsers and servers. Now this special-case bug was removed.</p>
-</li>
-<li>
-<p>Built-in "mkdocs" theme now also supports Norwegian language (#3024)</p>
-</li>
-<li>
-<p>Plugin-related warnings look more readable (#3016)</p>
-</li>
+<li><strong>Windows</strong> 10 or higher</li>
+<li><strong>Ubuntu</strong> 18.04 LTS or higher</li>
 </ul>
-<p>See <a href="https://github.com/mkdocs/mkdocs/compare/1.4.1...1.4.2">commit log</a>.</p>
-<h4 id="customize-event-order-for-plugin-event-handlers-2973">Customize event order for plugin event handlers (#2973)<a class="headerlink" href="#customize-event-order-for-plugin-event-handlers-2973" title="Permanent link"></a></h4>
-<p>Plugins can now choose to set a priority value for their event handlers. This can override the old behavior where for each event type, the handlers are called in the order that their plugins appear in the <a href="../user-guide/configuration.md#plugins"><code>plugins</code> config</a>.</p>
-<p>If this is set, events with higher priority are called first. Events without a chosen priority get a default of 0. Events that have the same priority are ordered as they appear in the config.</p>
-<p>Recommended priority values: <code>100</code> "first", <code>50</code> "early", <code>0</code> "default", <code>-50</code> "late", <code>-100</code> "last".<br />
-As different plugins discover more precise relations to each other, the values should be further tweaked.</p>
-<p>See <a href="../dev-guide/plugins.md#event-priorities"><strong>documentation</strong></a>.</p>
-<h4 id="new-events-that-persist-across-builds-in-mkdocs-serve-2972">New events that persist across builds in <code>mkdocs serve</code> (#2972)<a class="headerlink" href="#new-events-that-persist-across-builds-in-mkdocs-serve-2972" title="Permanent link"></a></h4>
-<p>The new events are <code>on_startup</code> and <code>on_shutdown</code>. They run at the very beginning and very end of an <code>mkdocs</code> invocation.<br />
-<code>on_startup</code> also receives information on how <code>mkdocs</code> was invoked (e.g. <code>serve</code> <code>--dirtyreload</code>).</p>
-<p>See <a href="../dev-guide/plugins.md#events"><strong>documentation</strong></a>.</p>
-<h4 id="replace-filesrc_path-to-not-deal-with-backslashes-2930">Replace <code>File.src_path</code> to not deal with backslashes (#2930)<a class="headerlink" href="#replace-filesrc_path-to-not-deal-with-backslashes-2930" title="Permanent link"></a></h4>
-<p>The property <code>src_path</code> uses backslashes on Windows, which doesn't make sense as it's a virtual path.<br />
-To not make a breaking change, there's no change to how <em>this</em> property is used, but now you should:</p>
+</blockquote>
+<p>To install and run MORAI SIM: Air, the user's system should meet the minimum or recommended specifications.</p>
+<h3 id="minimum-specifications">Minimum specifications<a class="headerlink" href="#minimum-specifications" title="Permanent link"></a></h3>
+<p>To use the basic functions of MORAI SIM: Air, the following system requirements should be satisfied.</p>
+<blockquote>
 <ul>
-<li>Use <strong><code>File.src_uri</code></strong> instead of <code>File.src_path</code></li>
-<li>and <strong><code>File.dest_uri</code></strong> instead of <code>File.dest_path</code>.</li>
+<li>CPU: Intel i5-9600KF or AMD Ryzen 5 3500X</li>
+<li>RAM: DDR4 16GB</li>
+<li>VGA: NVIDIA GeForce RTX 2060 Super</li>
 </ul>
-<p>See more <a href="../dev-guide/plugins.md#examples-of-config-definitions">examples in <strong>documentation</strong></a>.</p>
-<h5 id="updated-config_optionssubconfig-2807">Updated: <code>config_options.SubConfig</code> (#2807)<a class="headerlink" href="#updated-config_optionssubconfig-2807" title="Permanent link"></a></h5>
-<p><code>SubConfig</code> used to silently ignore all validation of its config options. Now you should pass <code>validate=True</code> to it or just use new class-based configs where this became the default.</p>
-<p>So, it can be used to validate a nested sub-dict with all keys pre-defined and value types strictly validated.</p>
-<p>See <a href="../dev-guide/plugins.md#examples-of-config-definitions">examples in <strong>documentation</strong></a>.</p>
-<h4 id="other-changes-to-config-options">Other changes to config options<a class="headerlink" href="#other-changes-to-config-options" title="Permanent link"></a></h4>
-<p><code>URL</code>'s default is now <code>None</code> instead of <code>''</code>. This can still be checked for truthiness in the same way - <code>if config.some_url:</code> (#2962)</p>
-<p><code>FilesystemObject</code> is no longer abstract and can be used directly, standing for "file or directory" with optional existence checking (#2938)</p>
-<p>Bug fixes:</p>
+</blockquote>
+<h3 id="recommanded-specifications">Recommanded specifications<a class="headerlink" href="#recommanded-specifications" title="Permanent link"></a></h3>
+<p>To use multiple sensors in MORAI SIM: Air, the system requirements below should be satisfied.</p>
+<blockquote>
 <ul>
-<li>Fix <code>SubConfig</code>, <code>ConfigItems</code>, <code>MarkdownExtensions</code> to not leak values across different instances (#2916, #2290)</li>
-<li><code>SubConfig</code> raises the correct kind of validation error without a stack trace (#2938)</li>
-<li>Fix dot-separated redirect in <code>config_options.Deprecated(moved_to)</code> (#2963)</li>
+<li>CPU: Intel i9-9900K or AMD Ryzen 7 3700X or higher</li>
+<li>RAM: DDR4 64GB (or higher</li>
+<li>VGA: NVIDIA GeForce RTX 2080 Ti or higher</li>
 </ul>
-<p>Tweaked logic for handling <code>ConfigOption.default</code> (#2938)</p>
-<p>Deprecated config option classes: <code>ConfigItems</code> (#2983), <code>OptionallyRequired</code> (#2962), <code>RepoURL</code> (#2927)</p>
-<h2 id="previous-versions">Previous Versions<a class="headerlink" href="#previous-versions" title="Permanent link"></a></h2>
-<p>NOTE: This release has big changes to the implementation of plugins and their configs. But, the intention is to have zero breaking changes in all reasonably common use cases. Or at the very least if a code fix is required, there should always be a way to stay compatible with older MkDocs versions. Please report if this release breaks something.</p>
+</blockquote>
+<h2 id="running-morai-sim-air">Running MORAI SIM: Air<a class="headerlink" href="#running-morai-sim-air" title="Permanent link"></a></h2>
+<p>Install and run MORAI SIM: Air in the following order.</p>
+<h3 id="step-1-download-mirai-sim-launcher">Step 1: Download MIRAI SIM launcher<a class="headerlink" href="#step-1-download-mirai-sim-launcher" title="Permanent link"></a></h3>
+<p>Download the MORAI SIM Launcher package in the path below according to the user's OS environment.</p>
+<ul>
+<li>Windows:</li>
+<li>Linux: </li>
+</ul>
+<h3 id="step-2-run-the-launcher-program">Step 2: Run the launcher program<a class="headerlink" href="#step-2-run-the-launcher-program" title="Permanent link"></a></h3>
+<p>1) Run <strong>UELauncher.exe</strong> from the downloaded package path. <br></p>
+<p><img src="../../img/install_run-launcher.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<p>2) On the launcher execution screen as shown below, click <strong>Start</strong> after entering the <strong>Username</strong> and <strong>Password</strong> guided by MORAI.</p>
+<p><img src="../../img/install_login-launcher.png" style="width: 900px; height: auto;" alt="launcher"></p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+For details regarding Username and Password information, please contact the <a href="mailto:hsjeon@morai.ai" target="_blank">MORAI project manager</a>.
+</div>
+
+<h3 id="step-3-select-map-and-aircraft">Step 3: Select Map and Aircraft<a class="headerlink" href="#step-3-select-map-and-aircraft" title="Permanent link"></a></h3>
+<p>After launcher execution is completed, the following <strong>Map and Vehicle</strong> screen appears. <br>
+After selecting both the map and aircraft model to be used in the simulator, click Start to run the simulator.</p>
+<p><img src="../../img/install_select-launcher.png" style="width: 900px; height: auto;" alt="launcher"></p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+The <b>start</b> button does not appear unless either the map or aircraft model is selected.
+</div>
+
+<h3 id="step-4-check-the-simulator-run">Step 4: Check the simulator run<a class="headerlink" href="#step-4-check-the-simulator-run" title="Permanent link"></a></h3>
+<p>When the MORAI SIM:Air simulator is normally executed, the following simulator execution screen appears.</p>
+<p><img src="../../img/install_check-simulator.png" style="width: 900px; height: auto;" alt="launcher" title="Click to Enlage" onclick="window.open(this.src)"></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../intro/morai-simair/" class="btn btn-neutral float-left" title="About Morai SIM Air"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../intro/morai-simair/" class="btn btn-neutral float-left" title="About MORAI SIM: Air"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../ui/" class="btn btn-neutral float-right" title="User Interface">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
