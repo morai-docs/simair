@@ -29,18 +29,23 @@ The Unreal engine allows for the creation of highly detailed 3D environments and
 Moreover, the Unreal engine can render textures and colors realistically, which helps to create a more immersive simulation experience for users. This allows users to visualize and interact with the simulation environment in a way that closely mirrors the real-world environment, and enables them to test and validate the performance of their autonomous flight systems under realistic conditions.
 
 <figure>
-    <img src="../../img/into-duluth.png" alt="sensor">
+    <img src="../../img/into-duluth.png" style="width: 1000px; height: auto;" alt="sensor">
     <figcaption style="padding-top: 10px;"><b> Figure 1. 3D Simulation environment for Duluth airport provided by MORAI SIM: Air</b></figcaption>
 </figure>
 
 ### Supports realistic flight dynamics model and 6 DOF
-MORAI SIM: Air supports realistic flight dynamics models (FDM) based on [JSBsim](https://jsbsim.sourceforge.net/JSBSim/index.html) for simulation modeling of the behavior of aircraft engines and other systems.<br> 
+MORAI SIM: Air supports realistic flight dynamics models (FDM) based on [JSBSim](https://jsbsim.sourceforge.net/JSBSim/index.html) for simulation modeling of the behavior of aircraft engines and other systems.<br> 
 Additionally, MORAI SIM: Air implements the [Cirrus SR22](https://sketchfab.com/3d-models/cirrus-sr-22-f0f1089f374f4d398f0483403fe6af7a) aircraft model and 6 degrees of freedom (DOF) data, providing a realistic simulation experience.
 
+<figure>
+    <img src="../../img/sr22.png" style="width: 1000px; height: auto;" alt="sensor">
+    <figcaption style="padding-top: 10px;"><b> Figure 2. Flight of SR22 model implemented in MORAI SIM: Air</b></figcaption>
+</figure>
+<p></p>
 <video controls>
   <source src="https://user-images.githubusercontent.com/120563672/226307319-c5462e1a-758f-4082-8b03-10d1062bda64.mp4">
 </video>
-<p style="font-size:16px;"><b> Figure 2. SR22 model with joystick implemented in MORAI SIM: Air</b></p>
+<p style="font-size:16px;"><b> Figure 3. Flight control of SR22 with joystick in MORAI SIM: Air</b></p>
 
 ### Reproduces weather and time variation with dynamic environment
 MORAI SIM: Air also includes a simulation of the environment and weather conditions, which affect the flight behavior and performance of the aerial vehicles. This allows users to test their autonomous flight systems under different conditions and scenarios.
@@ -48,21 +53,21 @@ MORAI SIM: Air also includes a simulation of the environment and weather conditi
 <video controls>
   <source src="https://user-images.githubusercontent.com/120563672/226257559-697af30d-e705-49d4-b930-f26dd60c848d.mp4">
 </video>
-<p style="font-size:16px;"><b> Figure 3. Reproduced video of weather and time condition changes in MORAI SIM: Air </b></p>
+<p style="font-size:16px;"><b> Figure 4. Reproduced video of weather and time condition changes in MORAI SIM: Air </b></p>
 
 ### Integration with external sensors and real-time communication
 MORAI SIM: Air supports integration with a variety of external sensors commonly used in autonomous flight systems, including Camera, GNSS, IMU, and RADAR sensors. This enables users to test and validate the integration and performance of their sensors and systems in a virtual environment. <br>
 
 <figure>
-    <img src="../../img/Default_Layout_Sensor.png" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)">
-    <figcaption style="padding-top: 10px;"><b> Figure 4. Sensor models provided by MORAI SIM: Air</b></figcaption>
+    <img src="../../img/Default_Layout_Sensor.png" alt="sensor" style="width: 1000px; height: auto;" title="Click to Enlage" onclick="window.open(this.src)">
+    <figcaption style="padding-top: 10px;"><b> Figure 5. Sensor models provided by MORAI SIM: Air</b></figcaption>
 </figure>
 
 Also, MORAI SIM: Air supports real-time communication for flight status messages and sensor data using the ROS2 and UDP communication protocols. This enables users to monitor and analyze the performance of their autonomous flight systems during the simulation in real-time.
 
 <figure>
-    <img src="../../img/Default_NetworkSettings.png" alt="network" title="Click to Enlage" onclick="window.open(this.src)">
-    <figcaption style="padding-top: 10px;"><b> Figure 5. Network settings provided by MORAI SIM: Air </b></figcaption>
+    <img src="../../img/Default_NetworkSettings.png" alt="network" style="width: 1000px; height: auto;" title="Click to Enlage" onclick="window.open(this.src)">
+    <figcaption style="padding-top: 10px;"><b> Figure 6. Network settings provided by MORAI SIM: Air </b></figcaption>
 </figure>
 
 

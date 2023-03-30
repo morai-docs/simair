@@ -25,11 +25,8 @@ nav:
   - Using MORAI SIM Air:
     #- User Guide: user-guide/
     - Basic Controls: user-guide/basic-controls.md
-    - Network Configurations: user-guide/network.md
-    - Sensor Setting: user-guide/sensors.md
-    - Useful Functions: user-guide/useful.md
-  
-
+    - Network Settings: user-guide/network.md
+    - Sensor Settings: user-guide/sensors.md
 
 theme: 
   name: readthedocs
@@ -38,11 +35,6 @@ theme:
   #custom_dir: custom_theme
   hljs_languages:
     - yaml
-
-extra_html:
-  - callout_tip.html
-  - callout.html
-
 
 extra_css: 
   - css/custom.css

@@ -19,20 +19,26 @@
  .rst-content li {
     line-height: 2.2rem; /*230316*/
     font-size: 17px; /*230316*/
-    /*padding-top: 0em;*/
  }
 
  .rst-content h2 {
     /*font-size: 2em;*/
-    margin-top: 3em;
+    margin-top: 2.5em;
     line-height: 1em;  
  }
 
  .rst-content h3 {
     /*font-size: 2em;*/
-    margin-top: 3em;
+    margin-top: 2.5em;
     line-height: 1em;  
  }
+
+ .rst-content h4 {
+    /*font-size: 2em;*/
+    margin-top: 2.5em;
+    line-height: 1em;  
+ }
+
 
  .rst-content code {
     white-space: pre-wrap;
@@ -174,11 +180,13 @@ td, th {
 
 .rst-content img { /*230316*/
     max-width: 100%;
-    width: 50%;
-    height: 50%;
+    /* width: 50%; */
+    height: auto;
+    display: block;
   
 
     margin-bottom: 0;
+    /* padding-top: 5px; */
     padding-bottom: -1;
  
     border: 0;
@@ -186,6 +194,18 @@ td, th {
     image-rendering: optimizeQuality;
 
 }
+.rst-content figure {
+    padding-top: 0px;
+}
+
+
+.rst-content {
+  width: auto;
+  max-height: 100%;
+  overflow: hidden;
+  
+}
+
 /*
  * Without the following amendments, the navigation in the theme will be
  * slightly cut off. This is due to the fact that the .wy-nav-side has a

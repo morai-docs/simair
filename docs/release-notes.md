@@ -2,7 +2,6 @@
 This section describes the additions, changes, and bug fixes reflected in **MORAI SIM: Air** by latest and previous versions.
 
 ---
-<br>
 
 ## Latest
 

@@ -26,17 +26,12 @@ The notational conventions for notes, warnings, and tips used in this document a
 ℹ️ <span class = "not-calloutTitle"> NOTE </span> <br>
 General Information for related matters.
 </div>
-
-<br>
-<!-- -->
-
+<p></p>
 <div markdown="span" class="bs-callout bs-callout-danger">
 ⚠️  <span class = "dan-calloutTitle"> WARNING </span> <br>
 For matters you should follow when setting or configuration
 </div>
-
-<br>
-
+<p></p>
 <div markdown="span" class="bs-callout bs-callout-success">
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
 Useful tips when setting or configuration
