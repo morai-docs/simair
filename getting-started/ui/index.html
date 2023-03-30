@@ -82,6 +82,18 @@
     <li class="toctree-l3"><a class="reference internal" href="#2-environment-settings">2] Environment Settings</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3-flight-instruments">3] Flight Instruments</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#3-1-heading-indicator">3-1] Heading Indicator</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-2-airspeed-indicator">3-2] Airspeed Indicator</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-3-attitude-indicator">3-3] Attitude Indicator</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-4-altimeter">3-4] Altimeter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-5-vertical-speed-indicator">3-5] Vertical Speed Indicator</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -89,7 +101,7 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-aircraft-control-mode">1] Aircraft Control Mode</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-proopulsion">2] Proopulsion</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-propulsion">2] Propulsion</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3-flight-control">3] Flight Control</a>
     </li>
@@ -102,11 +114,9 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../user-guide/basic-controls/">Basic Controls</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user-guide/network/">Network Configurations</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-guide/network/">Network Settings</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user-guide/sensors/">Sensor Setting</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../user-guide/useful/">Useful Functions</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../user-guide/sensors/">Sensor Settings</a>
                   </li>
               </ul>
       </div>
@@ -138,34 +148,115 @@
 <p>This section discribes an overview of the MORAI SIM: Air user interface (UI) and provides the detailed information on each UI component.</p>
 <hr />
 <h2 id="ui-overview">UI Overview<a class="headerlink" href="#ui-overview" title="Permanent link"></a></h2>
-<p>The MORAI SIM: Air UI is designed to provide users with easy access to all necessary information and controls, allowing for a realistic and immersive simulation experience. <br></p>
-<p><img alt="UI전체화면" src="" /></p>
+<p>The MORAI SIM: Air UI is designed to provide users with easy access to all necessary information and controls, allowing for a realistic and immersive simulation experience. <br>
+The entire UI screen of Sim Air is shown below.</p>
+<figure>
+  <img src="../../img/ui-overview1.png" alt="sensor" style="width: 1000px; height: auto;" title="Click to Enlage" onclick="window.open(this.src)">
+  <figcaption style="padding-top: 10px;"><b> Figure 1. UI overview of MORAI SIM: Air</b> 
+  </figcaption>
+</figure>
+
 <h2 id="default-ui">Default UI<a class="headerlink" href="#default-ui" title="Permanent link"></a></h2>
-<p>The default UI that appears as soon as you enter the simulater for the first time consists of the following three parts, centering on the map and aircraft selected in the previous step.</p>
-<p><img alt="UI디폴트화면" src="" /></p>
+<p>The default UI appears as soon as you enter the simulater for the first time. <br>
+Centered on the map and aircraft selected in the previous step, it consists of the following three parts: <strong>1] Network and Sensor Settings</strong>, <strong>2] Environment Settings</strong>, and <strong>3] Flight Instruments</strong>.</p>
+<figure>
+  <img src="../../img/ui-default2.png" alt="sensor" style="width: 1000px; height: auto;" title="Click to Enlage" onclick="window.open(this.src)">
+  <figcaption style="padding-top: 10px;"><b> Figure 2. Default UI of MORAI SIM: Air</b> 
+  </figcaption>
+</figure>
+
 <h3 id="1-network-and-sensor-settings">1] Network and Sensor Settings<a class="headerlink" href="#1-network-and-sensor-settings" title="Permanent link"></a></h3>
-<p>This menu is located in the upper left corner of the screen and provides access to the core features provided by the simulator, such as networks and sensors.</p>
-<p><img src="../../img/ui-netsen-settings1.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<p>This menu is located on the left side of the menu at the top of the simulator screen, and provides access to the  network and sensor settings, which are the core features provided by the simulator.
+<img src="../../img/ui-netsen.png" alt="launcher"></p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+For details on how to use network and sensor functions, see the 'Using MORAI SIM AIR' part.
+</div>
+
 <h3 id="2-environment-settings">2] Environment Settings<a class="headerlink" href="#2-environment-settings" title="Permanent link"></a></h3>
-<p>Environment settings exist at the top right of the screen, and select the weather and time zone that determine the background and illumination of the simulator.</p>
-<p><img src="../../img/ui-env-settings1.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<p>This menu is located on the right side of the menu at the top of the simulator screen, and provides weather and time of day configurations that determine the background and lighting of the simulator.
+<img src="../../img/ui-env.png" style="width: 500px; height: auto;" alt="launcher"></p>
 <h3 id="3-flight-instruments">3] Flight Instruments<a class="headerlink" href="#3-flight-instruments" title="Permanent link"></a></h3>
-<p>The flight instrument and provides real-time flight information such as the current heading, air speed, attitude, and altitude of the aircraft.</p>
-<p><img alt="UI기체인포flightInstruments" src="" /></p>
+<p>The flight instruments are located on the left side of the simulator screen, and provide real-time flight information such as the current heading, air speed, attitude, and altitude of the aircraft.</p>
+<h4 id="3-1-heading-indicator">3-1] Heading Indicator<a class="headerlink" href="#3-1-heading-indicator" title="Permanent link"></a></h4>
+<p>Displays the heading of the aircraft in degrees.
+<img src="../../img/ui-heading.png" style="width: 300px; height: auto;" alt="launcher"></p>
+<h4 id="3-2-airspeed-indicator">3-2] Airspeed Indicator<a class="headerlink" href="#3-2-airspeed-indicator" title="Permanent link"></a></h4>
+<p>Displays the indicated airspeed in knots.
+<img src="../../img/ui-airspeed.png" style="width: 300px; height: auto;"alt="launcher"></p>
+<h4 id="3-3-attitude-indicator">3-3] Attitude Indicator<a class="headerlink" href="#3-3-attitude-indicator" title="Permanent link"></a></h4>
+<p>Displays the altitude of the aircraft with pich and bank values as shown below.
+<img src="../../img/ui-attitude.png" style="width: 300px; height: auto;"alt="launcher"></p>
+<ul>
+<li>Pitch: Displays the upper/lower pitch values on the vertical scale in increments of 5 degrees based on a small scale (in the order of '0 - 5 - 10 - 15 - 20 degrees').</li>
+<li>Bank: Displays left/right rolling values from 0 to 60 degrees based on the center 0 point (in the order of '0 - 10 - 20 - 30 - 45 - 60 degrees').</li>
+</ul>
+<h4 id="3-4-altimeter">3-4] Altimeter<a class="headerlink" href="#3-4-altimeter" title="Permanent link"></a></h4>
+<p>Displays the altitude of the aircraft with altitude above sea level (ASL) and altitude above ground (AVL) as shown below.
+<img src="../../img/ui-altimeter.png" style="width: 300px; height: auto;" alt="launcher"></p>
+<ul>
+<li>ASL: Indicates altitude above sea level(ASL) on a circular scale (unit: feet).</li>
+<li>AVL: Indicates altitude above ground (AVL) in square numbers above the circular scale (unit: feet).</li>
+</ul>
+<h4 id="3-5-vertical-speed-indicator">3-5] Vertical Speed Indicator<a class="headerlink" href="#3-5-vertical-speed-indicator" title="Permanent link"></a></h4>
+<p>Displays the vertical speed of the aircraft in feet per minute.
+<img src="../../img/ui-verti.png" alt="launcher"></p>
 <h2 id="aircraft-info-ui">Aircraft Info UI<a class="headerlink" href="#aircraft-info-ui" title="Permanent link"></a></h2>
-<p>The aircraft information UI shows the aircraft control mode and the current flight status and steering input values of the aircraft, such as speed, air pressure, control surface and attitude, in detailed numerical values. <br></p>
-<p>If you click the mouse on the Ego aircraft, the aircraft information window appears on the right side of the simulator screen as shown below.</p>
-<p><img alt="UI기체인포전체화면" src="" /></p>
+<p>The <strong>Aircraft Information</strong> UI provides the aircraft control mode and current flight status such as airspeed and air pressure, as well as steering inputs for control surfaces and attitude, in detailed numerical values.</p>
+<p>If you click the mouse on the <strong>Ego aircraft</strong>, the Aircraft Information window appears on the right side of the simulator screen as shown below.</p>
+<figure>
+    <img src="../../img/ui-info.png" alt="info" style="width: 1000px; height: auto;" title="Click to Enlage" onclick="window.open(this.src)">
+    <figcaption style="padding-top: 10px;"><b> Figure 3. Aircraft Info UI of MORAI SIM: Air</b></figcaption>
+</figure>
+
 <h3 id="1-aircraft-control-mode">1] Aircraft Control Mode<a class="headerlink" href="#1-aircraft-control-mode" title="Permanent link"></a></h3>
-<p>Displays the mode to control the Ego aircraft with <strong>Manual Control Mode</strong> and <strong>Network Control Mode</strong>.</p>
-<p><img src="../../img/ui-airinfo-controlmode.png" style="width: 450px; height: auto;" alt="launcher"></p>
-<h3 id="2-proopulsion">2] Proopulsion<a class="headerlink" href="#2-proopulsion" title="Permanent link"></a></h3>
-<p>Displays engine RPM, air speed (knots), thrust according to throttle control and manifold pressure (inHg) according to  aircraft altitude.</p>
-<p><img src="../../img/ui-airinfo-propulsion.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<p>Displays the mode to control the Ego aircraft with <strong>Manual Control Mode</strong> and <strong>Network Control Mode</strong>.
+<img src="../../img/ui-controlmode.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<p><strong>Manual Control Mode</strong> is a mode in which the user controls the aircraft with a keyboard or joystick. <Br>
+The default <strong>Manual Control Mode</strong> is keyboard control, and the keyboard <code>Q</code> key toggles between keyboard control and joystick control.
+<br></p>
+<p>To control the aircraft with a joystick, connect the joystick to the simulator via USB and press <code>Q</code>. Then, to control the aircraft with the keyboard, press <code>Q</code> again.</p>
+<h3 id="2-propulsion">2] Propulsion<a class="headerlink" href="#2-propulsion" title="Permanent link"></a></h3>
+<p>Displays engine RPM, air speed (knots), thrust according to throttle control and manifold pressure (inHg) according to  aircraft altitude.
+<img src="../../img/ui-propulsion.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+When you press <code>E</code> in Keyboard Manual Control Mode, the value of <b>Airspeed</b>, <b>Engine RPM</b>, and <b>Throttle</b> (up to 1) increase. <br>
+In addition, see the <a href="../../user-guide/basic-controls">Basic Controls</a> section for a detailed description of each key used to operate the aircraft with the keyboard in <b>Manual Control Mode.</b>
+</div>
+
 <h3 id="3-flight-control">3] Flight Control<a class="headerlink" href="#3-flight-control" title="Permanent link"></a></h3>
-<p>Displays the attitude value according to the flight control surfaces and trim control, and the altitude and speed values ​​according to the vertical and horizontal movement of the aircraft in detailed numerical values.</p>
-<p><img alt="UI기체인포화면flightControl " src="" /></p>
-<p>The attitude value of an aircraft can be displayed based on the control surface and trim control. The control surfaces, such as the ailerons and elevators, are used to control the roll, pitch, and yaw of the aircraft, while the trim control is used to adjust the neutral position of these surfaces. The altitude and speed values of the aircraft can be displayed in detailed numerical values based on its vertical and horizontal movement. </p>
+<p>Displays the flight control surfaces and trim control value, as <strong>Primary Control</strong>, along with the <strong>Attitude</strong>, <strong>Vertical Info</strong> and <strong>Airspeed</strong> values ​​of the aircraft in detailed numerical values.
+<img src="../../img/ui-flightst.png" style="width: 450px; height: auto;" alt="launcher"></p>
+<p>See below for descriptions of abbreviations and terms in <strong>Flight Control</strong>.</p>
+<div markdown="span" class="bs-callout bs-callout-primary">
+ℹ️ <span class = "not-calloutTitle"> NOTE </span> <br>
+  <ul> 
+    <li>
+    AOA: Angle of Attack (degrees)
+    </li>
+    <li>
+    EAS: Equivalent Airspeed (knots)
+    </li>
+    <li>
+    TAS: True Airspeed (knots)
+    </li>
+    <li>
+    GS: Ground Speed (knots)
+    </li>
+    <li>
+    Climb Rate: Vertical Speed Indicator (feet per minute)
+    </li>
+    <li>
+    Trim: Shows the input data of each trim from -1 to +1
+    </li>
+  </ul> 
+</div>
+
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+See the <a href="../../user-guide/basic-controls">Basic Controls</a> section for a detailed description of each key for controlling the flight control surfaces and trim of each Aileron, Elevator, Rudder as <b>Primary Control</b> and Flap as <B>Secondary Control</b>.
+</div>
               
             </div>
           </div><footer>

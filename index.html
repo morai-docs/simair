@@ -78,11 +78,9 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="user-guide/basic-controls/">Basic Controls</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="user-guide/network/">Network Configurations</a>
+                  <li class="toctree-l1"><a class="reference internal" href="user-guide/network/">Network Settings</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="user-guide/sensors/">Sensor Setting</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="user-guide/useful/">Useful Functions</a>
+                  <li class="toctree-l1"><a class="reference internal" href="user-guide/sensors/">Sensor Settings</a>
                   </li>
               </ul>
       </div>
@@ -110,7 +108,9 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="welcome-to-morai-sim-air-documentation">Welcome to MORAI SIM Air Documentation 👍<a class="headerlink" href="#welcome-to-morai-sim-air-documentation" title="Permanent link"></a></h1>
-<p>This document is a user guide for <strong>MORAI SIM: AiR</strong> Alpha version provided to <a href="https://cirrusaircraft.com">CIRRUS AIRCRAGT</a></p>
+<p><img src="./img/intro2.png" style="width: 1000px; height: auto;" alt="sensor">
+<Br>
+This document is a User Guide for <strong>MORAI SIM: AiR</strong> Alpha version provided to <a href="https://cirrusaircraft.com">CIRRUS AIRCRAGT</a></p>
 <p>Take a look the <a href="intro/morai-simair/">MORAI SIM: Air</a>'s concept and features.  <br>
 Start MORAI SIM: Air by reading the <strong><a href="getting-started/">introductory tutorial</a></strong>, then check the <strong><a href="user-guide/">user guide</a></strong> for more information.</p>
 <div class="text-center">
@@ -126,70 +126,6 @@ Start MORAI SIM: Air by reading the <strong><a href="getting-started/">introduct
   </li>
 </ul>
 </div>
-
-<p><br></p>
-<blockquote>
-<p>ℹ️ <span style="color:#247CFF"> <strong><em>NOTE</em></strong> </span> <br> All documentation source files for this guide are &gt; written in Markdown, and configured with a single YAML configuration file. </p>
-</blockquote>
-<!-- -->
-
-<blockquote>
-<p>EXAMPLE: <strong>Advanced example:</strong></p>
-<p>This produces warnings based on the Markdown content (and warnings are fatal in <a href="#strict">strict</a> mode):</p>
-<pre class="highlight"><code class="language-python">import logging, re
-import mkdocs.plugins
-
-log = logging.getLogger('mkdocs')
-
-@mkdocs.plugins.event_priority(-50)
-def on_page_markdown(markdown, page, **kwargs):
-    path = page.file.src_uri
-    for m in re.finditer(r'\bhttp://[^) ]+', markdown):
-        log.warning(f"Documentation file '{path}' contains a non-HTTPS link: {m[0]}")</code></pre>
-</blockquote>
-<!-- -->
-<blockquote>
-<p>NOTE: <strong>Suggested useful configurations:</strong></p>
-<ul>
-<li>
-<p>GitHub Wiki:<br />
-    (e.g. <code>https://github.com/project/repo/wiki/foo/bar/_edit</code>)</p>
-<pre class="highlight"><code class="language-yaml">repo_url: 'https://github.com/project/repo/wiki'
-edit_uri_template: '{path_noext}/_edit'</code></pre>
-</li>
-<li>
-<p>BitBucket editor:<br />
-    (e.g. <code>https://bitbucket.org/project/repo/src/master/docs/foo/bar.md?mode=edit</code>)</p>
-<pre class="highlight"><code class="language-yaml">repo_url: 'https://bitbucket.org/project/repo/'
-edit_uri_template: 'src/master/docs/{path}?mode=edit'</code></pre>
-</li>
-<li>
-<p>GitLab Static Site Editor:<br />
-    (e.g. <code>https://gitlab.com/project/repo/-/sse/master/docs%2Ffoo%2bar.md</code>)</p>
-<pre class="highlight"><code class="language-yaml">repo_url: 'https://gitlab.com/project/repo'
-edit_uri_template: '-/sse/master/docs%2F{path!q}'</code></pre>
-</li>
-<li>
-<p>GitLab Web IDE:<br />
-    (e.g. <code>https://gitlab.com/-/ide/project/repo/edit/master/-/docs/foo/bar.md</code>)</p>
-<p>```yaml
-edit_uri_template: 'https://gitlab.com/-/ide/project/repo/edit/master/-/docs/{path}'</p>
-</li>
-</ul>
-</blockquote>
-<!-- -->
-
-<blockquote>
-<p>and <code>theme.name</code> is set to <code>null</code>, then the entire theme configuration must
-be defined in the [theme] configuration option in the <code>mkdocs.yml</code> file.</p>
-<p>However, when a theme is [packaged] up for distribution, and loaded using
-the <code>theme.name</code> configuration option, then a <code>mkdocs_theme.yml</code> file
-is required for the theme.</p>
-</blockquote>
-<figure>
-  <img src="./img/Default_Layout_Sensor.png" alt="sensor" style="width:50%; height:70%;"/>
-  <figcaption>고양이 사진</figcaption>
-</figure>
               
             </div>
           </div><footer>
@@ -237,5 +173,5 @@ is required for the theme.</p>
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2023-03-23 08:59:49.946372+00:00
+Build Date UTC : 2023-03-30 11:47:21.803032+00:00
 -->

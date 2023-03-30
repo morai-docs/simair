@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="MORAI Engineering Service Team" /><link rel="canonical" href="https://morai-docs.github.io/simair-cirrus/user-guide/network/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Network Configurations - MORAI SIM Air - Cirrus</title>
+    <title>Network Settings - MORAI SIM Air - Cirrus</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -16,7 +16,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Network Configurations";
+        var mkdocs_page_name = "Network Settings";
         var mkdocs_page_input_path = "user-guide\\network.md";
         var mkdocs_page_url = "/simair-cirrus/user-guide/network/";
       </script>
@@ -78,13 +78,45 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../basic-controls/">Basic Controls</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Network Configurations</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Network Settings</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#supported-communication-method">Supported communication method</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#receiving-aircraft-control-messages">Receiving Aircraft Control Messages</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-subscribe-to-ros2-messages">Step 1: Subscribe to ROS2 messages</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-udp-network-setting-in-the-simulator">Step 2: UDP network setting in the simulator</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-activate-the-network-menu">1) Activate the network menu</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-configure-host-ipport">2) Configure Host IP/Port</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-network-connection">3) Network connection</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sending-sensor-messages">Sending Sensor Messages</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-senosr-network-setting-in-the-simulator">Step 1: Senosr network setting in the simulator</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-place-sensors-on-the-aircraft">1) Place sensors on the aircraft</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-configure-destination-ipport">2) Configure Destination IP/Port</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-network-connection_1">3) Network connection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-publishing-to-ros2">Step 2: Publishing to ROS2</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensor Setting</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../useful/">Useful Functions</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensor Settings</a>
                   </li>
               </ul>
       </div>
@@ -102,7 +134,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Using MORAI SIM Air &raquo;</li>
-      <li>Network Configurations</li>
+      <li>Network Settings</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/morai-docs/simair-cirrus/blob/main/docs/user-guide/network.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -112,40 +144,108 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="network-configuration">Network Configuration<a class="headerlink" href="#network-configuration" title="Permanent link"></a></h1>
-<p>This doucument's revision history is as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Markdown file</th>
-<th>Old URL</th>
-<th>New URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>index.md</code></td>
-<td><code>index.html</code></td>
-<td><code>index.html</code></td>
-</tr>
-<tr>
-<td><code>foo.md</code></td>
-<td><code>foo/index.html</code></td>
-<td><code>foo.html</code></td>
-</tr>
-<tr>
-<td><code>foo/bar.md</code></td>
-<td><code>foo/bar/index.html</code></td>
-<td><code>foo/bar.html</code></td>
-</tr>
-</tbody>
-</table>
+                <h1 id="network-settings">Network Settings<a class="headerlink" href="#network-settings" title="Permanent link"></a></h1>
+<p>This section describes how to set up the network for communication supported by MORAI SIM: Air.</p>
+<hr />
+<h2 id="supported-communication-method">Supported communication method<a class="headerlink" href="#supported-communication-method" title="Permanent link"></a></h2>
+<p>MORAI SIM: Air supports UDP and ROS2 for network communication between the simulator and external systems.</p>
+<p><a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a> is a widely used network protocol for transmitting data over the internet, while <a href="https://docs.ros.org/en/rolling/index.html">ROS2 (Robot Operating System 2)</a> is a popular middleware for robotics and automation applications. <br>
+The MORAI SIM: Air simulator allows for sending sensor data and receiving aircraft control messages using either UDP or ROS2 communication methods. </p>
+<p>To communicate with MORAI SIM: Air, <br>
+Depending on the simulator's message transmission/reception method, the following network settings are required.</p>
+<figure>
+    <img src="../../img/network-configure.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)">
+    <figcaption style="padding-top: 10px;"><b> Figure 1. Network communication method supported by MORAI SIM: Air</b></figcaption>
+</figure>
+
+<ul>
+<li>
+<p>MORAI SIM: Air sends sensor data to an external system</p>
+<ol>
+<li><strong>UDP Network Settings</strong> in each sensor model in the simulator</li>
+<li>Receive UDP messages and publish to ROS2 using <strong>UDP to ROS2 Bridge</strong></li>
+</ol>
+</li>
+<li>
+<p>MORAI SIM: Air receives aircraft control messages from an external system</p>
+<ol>
+<li><strong>UDP Network Settings</strong> provided by the simulator (Subscriber IP/Port setting)</li>
+<li>Subscribe to ROS2 messages and them over UDP using <strong>UDP to ROS2 Bridge</strong></li>
+</ol>
+</li>
+</ul>
+<p>The UDP to ROS2 Bridge serves to connect data between the UDP-based simulator and the ROS2 system by receiving and transmitting UDP signals and issuing and subscribing to ROS2 as shown below.</p>
+<figure>
+    <img src="../../img/network-ros2bridge.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)">
+    <figcaption style="padding-top: 10px;"><b> Figure 2. Role of 'UDP to ROS2 Bridge'</b></figcaption>
+</figure>
+
+<div markdown="span" class="bs-callout bs-callout-danger">
+⚠️  <span class = "dan-calloutTitle"> WARNING </span> <br>
+The current simulator does not provide direct support for transmitting/receiving ROS2 messages. Therefore, <b>UDP to ROS2 Bridge</b> should be used for ROS2 communication with an external system.
+</div>
+
+<h2 id="receiving-aircraft-control-messages">Receiving Aircraft Control Messages<a class="headerlink" href="#receiving-aircraft-control-messages" title="Permanent link"></a></h2>
+<p>When the simulator receives control messages by ROS2 communication, <br>
+Configure the ROS2 to UDP communication environment and set the network of the simulator in the order below.</p>
+<h3 id="step-1-subscribe-to-ros2-messages">Step 1: Subscribe to ROS2 messages<a class="headerlink" href="#step-1-subscribe-to-ros2-messages" title="Permanent link"></a></h3>
+<p>For this step, you need to install and run <strong>UDP to ROS2 Bridge</strong>.</p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a> provided separately.
+</div>
+
+<h3 id="step-2-udp-network-setting-in-the-simulator">Step 2: UDP network setting in the simulator<a class="headerlink" href="#step-2-udp-network-setting-in-the-simulator" title="Permanent link"></a></h3>
+<h4 id="1-activate-the-network-menu">1) Activate the network menu<a class="headerlink" href="#1-activate-the-network-menu" title="Permanent link"></a></h4>
+<p>Click <strong>Network</strong> in the top left menu as shown below.
+<img src="../../img/network-setting.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="2-configure-host-ipport">2) Configure Host IP/Port<a class="headerlink" href="#2-configure-host-ipport" title="Permanent link"></a></h4>
+<p>The method of receiving aircraft control messages in the simulator consists of Ghost Mode and External Ctrl protocol.</p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+For the message type and detailed structure received in each Ghost Mode and External Ctrl, see here <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a>
+</div>
+<p><br>
+Configure the Host IP/Port as below to operate the aircraft in ghost mode by receiving external control messages.</p>
+<ul>
+<li>Host IP: Enter the IP of the host PC running the simulator</li>
+<li>Host Port: Enter the Port of Host PC</li>
+</ul>
+<p>Host IP/Port configuration method for External Ctrl protocol is the same as above.</p>
+<h4 id="3-network-connection">3) Network connection<a class="headerlink" href="#3-network-connection" title="Permanent link"></a></h4>
+<p>Click <strong>Connect</strong> at the bottom of each <strong>PROTOCOL_SUB_GHOSTMODE</strong> and <strong>PROTOCOL_SUB_EXTERNALCTRL</strong>. <br>
+Then, it enters into a standby state in which a control message can be received.</p>
+<h2 id="sending-sensor-messages">Sending Sensor Messages<a class="headerlink" href="#sending-sensor-messages" title="Permanent link"></a></h2>
+<h3 id="step-1-senosr-network-setting-in-the-simulator">Step 1: Senosr network setting in the simulator<a class="headerlink" href="#step-1-senosr-network-setting-in-the-simulator" title="Permanent link"></a></h3>
+<h4 id="1-place-sensors-on-the-aircraft">1) Place sensors on the aircraft<a class="headerlink" href="#1-place-sensors-on-the-aircraft" title="Permanent link"></a></h4>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+For details on how to place the sensor, see the sensor setting <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a> part.
+</div>
+
+<h4 id="2-configure-destination-ipport">2) Configure Destination IP/Port<a class="headerlink" href="#2-configure-destination-ipport" title="Permanent link"></a></h4>
+<p>Configure Destination IP/Port for UDP network in <strong>Network Settings</strong> at the bottom of the sensor setting window.</p>
+<p><img src="../../img/network-sensor.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<ul>
+<li><strong>Destination IP</strong> and <strong>Port</strong>: <ul>
+<li>Enter the IP and port of the target server that transmits sensor data in the simulator.</li>
+<li>In case of ROS2 communication in the server, enter the IP and Port of the server where UDP to ROS2 Bridge is installed.</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-network-connection_1">3) Network connection<a class="headerlink" href="#3-network-connection_1" title="Permanent link"></a></h4>
+<p>Click <strong>Connect</strong> at the bottom of <strong>Network Settings</strong>. <Br>
+Then, it enters into a standby state in which sensor messages can be transmitted.</p>
+<h3 id="step-2-publishing-to-ros2">Step 2: Publishing to ROS2<a class="headerlink" href="#step-2-publishing-to-ros2" title="Permanent link"></a></h3>
+<p>For this step, you need to install and run <strong>UDP to ROS2 Bridge</strong>.</p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a> provided separately.
+</div>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../basic-controls/" class="btn btn-neutral float-left" title="Basic Controls"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../sensors/" class="btn btn-neutral float-right" title="Sensor Setting">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../sensors/" class="btn btn-neutral float-right" title="Sensor Settings">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>

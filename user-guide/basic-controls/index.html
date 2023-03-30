@@ -78,19 +78,25 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Basic Controls</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a>
+    <li class="toctree-l2"><a class="reference internal" href="#propulsion-controls">Propulsion Controls</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#target-audience">Target Audience</a>
+    <li class="toctree-l2"><a class="reference internal" href="#flight-controls">Flight Controls</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#primary-flight-control-surfaces">Primary Flight Control Surfaces</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#scope">Scope</a>
+    <li class="toctree-l3"><a class="reference internal" href="#secondary-flight-control-surfaces">Secondary Flight Control Surfaces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trim-flight-control-surfaces">Trim Flight Control Surfaces</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-controls">Other Controls</a>
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../network/">Network Configurations</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../network/">Network Settings</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensor Setting</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../useful/">Useful Functions</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensor Settings</a>
                   </li>
               </ul>
       </div>
@@ -119,42 +125,199 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="basic-controls">Basic Controls<a class="headerlink" href="#basic-controls" title="Permanent link"></a></h1>
-<p>The purpose, target audiences, and scope of this document is as follows:</p>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link"></a></h2>
-<h2 id="target-audience">Target Audience<a class="headerlink" href="#target-audience" title="Permanent link"></a></h2>
-<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link"></a></h2>
+<p>This section explains how to operate the keys to control propulsion (airspeed and RPM) and flight control surfaces (heading and attitude, altitude) of the aircraft.</p>
+<hr />
+<h2 id="propulsion-controls">Propulsion Controls<a class="headerlink" href="#propulsion-controls" title="Permanent link"></a></h2>
+<p>The keys and methods for the throttle to control the output power of the aircraft such as speed and engine RPM are as follows.</p>
 <table>
 <thead>
 <tr>
-<th>Markdown file</th>
-<th>Old URL</th>
-<th>New URL</th>
+<th>Key</th>
+<th>Action</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>index.md</code></td>
-<td><code>index.html</code></td>
-<td><code>index.html</code></td>
+<td><code>E</code></td>
+<td>Increase <strong>Throttle</strong> (up to 1)</td>
+<td>Air speed and RPM increase faster with long press</td>
 </tr>
 <tr>
-<td><code>foo.md</code></td>
-<td><code>foo/index.html</code></td>
-<td><code>foo.html</code></td>
+<td><code>D</code></td>
+<td>Decrease <strong>Throttle</strong> (down to 0)</td>
+<td>Air speed and RPM decrease faster with long press</td>
 </tr>
 <tr>
-<td><code>foo/bar.md</code></td>
-<td><code>foo/bar/index.html</code></td>
-<td><code>foo/bar.html</code></td>
+<td><code>C</code></td>
+<td>Cut and idle <strong>Throttle</strong></td>
+<td>Press once to set the throttle value to zero</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Brake on ground</td>
+<td>Acts on landing gear brake pads</td>
 </tr>
 </tbody>
 </table>
+<h2 id="flight-controls">Flight Controls<a class="headerlink" href="#flight-controls" title="Permanent link"></a></h2>
+<p>The keys and methods for controlling each flight control surface and trim for Aileron, Elevator, and Rudder as Primary Control and Flap as Secondary Control are as follows.</p>
+<h3 id="primary-flight-control-surfaces">Primary Flight Control Surfaces<a class="headerlink" href="#primary-flight-control-surfaces" title="Permanent link"></a></h3>
+<p>The control keys for each Aileron, Elevator, and Rudder, which are the control surfaces of the aircraft that control the aircraft's heading and attitude, such as bank, pitch, and yaw, are as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Num pad <code>4</code> and <code>6</code></td>
+<td><strong>Aileron</strong> Left and Right</td>
+<td>Bank (rolling), x-axis direction control (left/right during flight)</td>
+</tr>
+<tr>
+<td>Num pad <code>2</code> and <code>8</code></td>
+<td><strong>Elevator</strong> Up and Down</td>
+<td>Pitching, z-axis direction control</td>
+</tr>
+<tr>
+<td>Num pad <code>7</code> and <code>9</code></td>
+<td><strong>Rudder</strong> Left and Right</td>
+<td>Yawing, z-axis direction control (left/right on the ground)</td>
+</tr>
+<tr>
+<td>Num pad <code>5</code></td>
+<td><strong>Aileron</strong> and <strong>Rudder</strong> to stabilized position</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Space</code></td>
+<td><strong>Elevator</strong> to stabilized position</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="secondary-flight-control-surfaces">Secondary Flight Control Surfaces<a class="headerlink" href="#secondary-flight-control-surfaces" title="Permanent link"></a></h3>
+<p>The control keys for Flaps that generate high lift by changing the shape of the main wing are as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>R</code></td>
+<td><strong>Flap</strong> 0 stage</td>
+<td>Positioned at flap 0 degree in any section</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td><strong>Flap</strong> retract 1 step</td>
+<td></td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td><strong>Flap</strong> extract 1 step</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="trim-flight-control-surfaces">Trim Flight Control Surfaces<a class="headerlink" href="#trim-flight-control-surfaces" title="Permanent link"></a></h3>
+<p>The trim keys for each fine attitude adjustment of Aileron, Elevator, and Rudder are as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T</code></td>
+<td>Trim the <strong>Elevator</strong> down</td>
+<td>Fine adjust the pitch of the elevator down</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>Trim the <strong>Elevator</strong> up</td>
+<td>Fine adjust the pitch of the elevator up</td>
+</tr>
+<tr>
+<td><code>Y</code></td>
+<td>Trim the <strong>Aileron</strong> to the right</td>
+<td>Fine adjust the bank of aileron to the right</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>Trim the <strong>Aileron</strong> to the left</td>
+<td>Fine adjust the bank of aileron to the left</td>
+</tr>
+<tr>
+<td><code>U</code></td>
+<td>Trim the <strong>Rudder</strong> to the right</td>
+<td>Fine adjust the yaw of rudder to the right</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>Trim the <strong>Rudder</strong> to the left</td>
+<td>Fine adjust the yaw of rudder to the left</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-controls">Other Controls<a class="headerlink" href="#other-controls" title="Permanent link"></a></h2>
+<p>The keys to operate the control mode, viewpoint and location of the aircraft in the simulator are as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>I</code></td>
+<td>Return the aircraft to its original spawn point</td>
+</tr>
+<tr>
+<td><code>Q</code></td>
+<td>Toggel between keyboard and joystick in <strong>Manual Control Mode</strong></td>
+</tr>
+<tr>
+<td><strong>Right-click + Drag </strong></td>
+<td>Adjust Aircraft View Orientation</td>
+</tr>
+<tr>
+<td><strong>Mouse wheel scrolls up and down </strong></td>
+<td>Zooming in and out of the simulator screen</td>
+</tr>
+</tbody>
+</table>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+<b>Adjusting the Aircraft View Orientation</b>: By right-clicking and dragging the mouse on the simulator screen, you can adjust the viewing direction of the aircraft to multiple angles.
+</div>
+
+<p></p>
+
+<div markdown="span" class="bs-callout bs-callout-primary">
+ℹ️ <span class = "not-calloutTitle"> NOTE </span> <br>
+The ability to change the spawn location will be added in a future version.
+</div>
+
+<p><Br></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../../getting-started/ui/" class="btn btn-neutral float-left" title="User Interface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../network/" class="btn btn-neutral float-right" title="Network Configurations">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../network/" class="btn btn-neutral float-right" title="Network Settings">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
