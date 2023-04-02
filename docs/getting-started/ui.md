@@ -29,7 +29,7 @@ This menu is located on the left side of the menu at the top of the simulator sc
 
 <div markdown="span" class="bs-callout bs-callout-success">
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
-For details on how to use network and sensor functions, see the 'Using MORAI SIM AIR' part.
+For details on how to use network and sensor functions, see the <a href="../../user-guide/" >'Using MORAI SIM AIR'</a> part.
 </div>
 
 ### 2] Environment Settings
