@@ -96,11 +96,13 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-send-messages-from-external-server">Step 3: Send messages from external server</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#sending-sensor-messages">Sending Sensor Messages</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#step-1-senosr-network-setting-in-the-simulator">Step 1: Senosr network setting in the simulator</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-senosr-network-settings-in-the-simulator">Step 1: Senosr network settings in the simulator</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#1-place-sensors-on-the-aircraft">1) Place sensors on the aircraft</a>
     </li>
@@ -111,6 +113,22 @@
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#step-2-publishing-to-ros2">Step 2: Publishing to ROS2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#network-message-specifications">Network Message Specifications</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#udp-recieve-messages">UDP Recieve Messages</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cirrus_tx">Cirrus_tx</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cirrus_controlposition">Cirrus_ControlPosition</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cirrus_braking">Cirrus_Braking</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cirrus_engine">Cirrus_Engine</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -145,7 +163,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="network-settings">Network Settings<a class="headerlink" href="#network-settings" title="Permanent link"></a></h1>
-<p>This section describes how to set up the network for communication supported by MORAI SIM: Air.</p>
+<p>This section describes the configuration of the network environment of MORAI SIM: Air, the setting method for data communication between external systems, and sending/receiving messages.</p>
 <hr />
 <h2 id="supported-communication-method">Supported communication method<a class="headerlink" href="#supported-communication-method" title="Permanent link"></a></h2>
 <p>MORAI SIM: Air supports UDP and ROS2 for network communication between the simulator and external systems.</p>
@@ -191,7 +209,7 @@ Configure the ROS2 to UDP communication environment and set the network of the s
 <h3 id="step-1-subscribe-to-ros2-messages">Step 1: Subscribe to ROS2 messages<a class="headerlink" href="#step-1-subscribe-to-ros2-messages" title="Permanent link"></a></h3>
 <p>For this step, you need to install and run <strong>UDP to ROS2 Bridge</strong>.</p>
 <div markdown="span" class="bs-callout bs-callout-success">
-✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a> provided separately.
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">UDP to ROS2 Bridge User Guide</a> provided separately.
 </div>
 
 <h3 id="step-2-udp-network-setting-in-the-simulator">Step 2: UDP network setting in the simulator<a class="headerlink" href="#step-2-udp-network-setting-in-the-simulator" title="Permanent link"></a></h3>
@@ -199,27 +217,46 @@ Configure the ROS2 to UDP communication environment and set the network of the s
 <p>Click <strong>Network</strong> in the top left menu as shown below.
 <img src="../../img/network-setting.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="2-configure-host-ipport">2) Configure Host IP/Port<a class="headerlink" href="#2-configure-host-ipport" title="Permanent link"></a></h4>
-<p>The method of receiving aircraft control messages in the simulator consists of Ghost Mode and External Ctrl protocol.</p>
-<div markdown="span" class="bs-callout bs-callout-success">
-✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
-For the message type and detailed structure received in each Ghost Mode and External Ctrl, see here <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a>
-</div>
-<p><br>
-Configure the Host IP/Port as below to operate the aircraft in ghost mode by receiving external control messages.</p>
+<p>The method of receiving aircraft control messages in the simulator consists of <strong>GHOST MODE</strong> and <strong>EXTERNAL CTRL</strong> protocol.</p>
+<p>Configure the Host IP/Port as below to operate the aircraft in <strong>GHOST MODE</strong> by receiving external control messages.</p>
 <ul>
 <li>Host IP: Enter the IP of the host PC running the simulator</li>
 <li>Host Port: Enter the Port of Host PC</li>
 </ul>
-<p>Host IP/Port configuration method for External Ctrl protocol is the same as above.</p>
+<p>Host IP/Port configuration method for <strong>EXTERNAL CTRL</strong> protocol is the same as above.</p>
 <h4 id="3-network-connection">3) Network connection<a class="headerlink" href="#3-network-connection" title="Permanent link"></a></h4>
-<p>Click <strong>Connect</strong> at the bottom of each <strong>PROTOCOL_SUB_GHOSTMODE</strong> and <strong>PROTOCOL_SUB_EXTERNALCTRL</strong>. <br>
+<p>Click <strong>Connect</strong> at the bottom <strong>PROTOCOL_SUB_GHOSTMODE</strong> or <strong>PROTOCOL_SUB_EXTERNALCTRL</strong>. <br>
 Then, it enters into a standby state in which a control message can be received.</p>
+<h3 id="step-3-send-messages-from-external-server">Step 3: Send messages from external server<a class="headerlink" href="#step-3-send-messages-from-external-server" title="Permanent link"></a></h3>
+<p>Send a message from the external server to the simulator using UDP to ROS2 Bridge.</p>
+<ul>
+<li>Send coordinates by playing rosbag file</li>
+<li>Send UDP packet</li>
+</ul>
+<p>UDP messages received by each mode are as follows.</p>
+<ul>
+<li>GHOST MODE:<ul>
+<li><code>Cirrus_tx</code></li>
+</ul>
+</li>
+<li>EXTERNAL CTRL: <ul>
+<li><code>CIRRUS_CONTROL_POSITION</code>,   // 101  SIM -&gt; JSBSim</li>
+<li><code>CIRRUS_BRAKING</code>,            // 102</li>
+<li><code>CIRRUS_ENGINE</code>,             // 103</li>
+</ul>
+</li>
+</ul>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+For details on the types and detailed structure of UDP messages received in GHOST MODE or EXTERNAL CTRL, see the <a href=#udp-recieve-messages>UDP Recieve Messages</a> section.
+</div>
+
 <h2 id="sending-sensor-messages">Sending Sensor Messages<a class="headerlink" href="#sending-sensor-messages" title="Permanent link"></a></h2>
-<h3 id="step-1-senosr-network-setting-in-the-simulator">Step 1: Senosr network setting in the simulator<a class="headerlink" href="#step-1-senosr-network-setting-in-the-simulator" title="Permanent link"></a></h3>
+<h3 id="step-1-senosr-network-settings-in-the-simulator">Step 1: Senosr network settings in the simulator<a class="headerlink" href="#step-1-senosr-network-settings-in-the-simulator" title="Permanent link"></a></h3>
 <h4 id="1-place-sensors-on-the-aircraft">1) Place sensors on the aircraft<a class="headerlink" href="#1-place-sensors-on-the-aircraft" title="Permanent link"></a></h4>
 <div markdown="span" class="bs-callout bs-callout-success">
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
-For details on how to place the sensor, see the sensor setting <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a> part.
+For details on how to place the sensor, see the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">Sensor Settings</a> part.
 </div>
 
 <h4 id="2-configure-destination-ipport">2) Configure Destination IP/Port<a class="headerlink" href="#2-configure-destination-ipport" title="Permanent link"></a></h4>
@@ -238,8 +275,57 @@ Then, it enters into a standby state in which sensor messages can be transmitted
 <h3 id="step-2-publishing-to-ros2">Step 2: Publishing to ROS2<a class="headerlink" href="#step-2-publishing-to-ros2" title="Permanent link"></a></h3>
 <p>For this step, you need to install and run <strong>UDP to ROS2 Bridge</strong>.</p>
 <div markdown="span" class="bs-callout bs-callout-success">
-✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">guide</a> provided separately.
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">UDP to ROS2 Bridge User Guide</a> provided separately.
 </div>
+
+<h2 id="network-message-specifications">Network Message Specifications<a class="headerlink" href="#network-message-specifications" title="Permanent link"></a></h2>
+<p>This section describes details such as the type and format of messages received and transmitted by MORAI SIM: Air as described above.</p>
+<h3 id="udp-recieve-messages">UDP Recieve Messages<a class="headerlink" href="#udp-recieve-messages" title="Permanent link"></a></h3>
+<p>The data structure and packets for each UDP message sent from the external Cirrus system to MORAI SIM are as follows.</p>
+<h4 id="cirrus_tx">Cirrus_tx<a class="headerlink" href="#cirrus_tx" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-python">struct Cirrus_Tx
+{
+    float lon;              // deg
+    float lat;              // deg
+    float alt;              // ft
+    float heading;          // deg
+    float roll;             // deg
+    float pitch;            // deg
+    float sur_aileron;      // [-1 ~ 1]
+    float sur_flap;         // [-1 ~ 1]
+    float sur_elevator;     // [-1 ~ 1]
+    float sur_rudder;       // [-1 ~ 1]
+};</code></pre>
+<Br>
+<img src="../../img/cirrus_tx.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="cirrus_controlposition">Cirrus_ControlPosition<a class="headerlink" href="#cirrus_controlposition" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-python">struct Cirrus_ControlPosition
+{
+    float SetDaCmd;             // get_aileron              -1 ~ +1
+    float SetRollTrimCmd;       // get_aileron_trim         (-0.1 ~ +0.1)
+    float SetDeCmd;             // get_elevator             -1 ~ +1
+    float SetPitchTrimCmd;      // get_elevator_trim        (-0.1 ~ +0.1)
+    float SetDrCmd;             // get_rudder               -1 ~ +1                 
+    float SetDsCmd;             // get_rudder               -1 ~ +1                 
+    float SetYawTrimCmd;        // get_rudder_trim          (-0.1 ~ +0.1)
+    float SetDfCmd;             // get_flaps                0 ~ 1
+};</code></pre>
+<Br>
+<img src="../../img/Cirrus_ControlPosition.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="cirrus_braking">Cirrus_Braking<a class="headerlink" href="#cirrus_braking" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-python">struct Cirrus_Braking
+{
+    float SetBrake;             // Left + Right             0~1   
+};</code></pre>
+<Br>
+<img src="../../img/Cirrus_Braking.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="cirrus_engine">Cirrus_Engine<a class="headerlink" href="#cirrus_engine" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-python">struct Cirrus_Engine
+{
+    float SetThrottleCmd;      // get_throttle(i)           0~1
+};</code></pre>
+<Br>
+<img src="../../img/Cirrus_Engine.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
               
             </div>
           </div><footer>

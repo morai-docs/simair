@@ -99,7 +99,7 @@
   /*border: 1px solid rgb(214, 217, 215);*/
   border-left-width: 5px;
   border-radius: 3px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: sans-serif;
 }
 
@@ -112,7 +112,7 @@
 .suc-calloutTitle {
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
   font-weight: bold;
   line-height: 2;
@@ -123,7 +123,7 @@
 .not-calloutTitle {
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
   font-weight: bold;
   line-height: 2;
@@ -133,14 +133,12 @@
 .dan-calloutTitle {
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
   font-weight: bold;
   line-height: 2;
   color: #d9534f;
 }
-
-
 
 
 .bs-callout p:last-child {
@@ -215,7 +213,7 @@ blockquote { /*230316*/
     font-family: roboto;
     margin: 0px;
     padding: 1em 0.5em 1px 1.5em;
-    font-size: 17px;
+    font-size: 14px;
 }
 
 
@@ -299,12 +297,12 @@ p.warning::before {
 }
 
 pre {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 p pre
 {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Keyboard shortcuts tweaks */
