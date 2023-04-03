@@ -277,9 +277,9 @@ Then, it enters into a standby state in which a control message can be received.
 </ul>
 </li>
 <li>EXTERNAL CTRL: <ul>
-<li><code>CIRRUS_CONTROL_POSITION</code>,   // 101  SIM -&gt; JSBSim</li>
-<li><code>CIRRUS_BRAKING</code>,            // 102</li>
-<li><code>CIRRUS_ENGINE</code>,             // 103</li>
+<li><code>CIRRUS_CONTROL_POSITION</code>   // 101  SIM -&gt; JSBSim</li>
+<li><code>CIRRUS_BRAKING</code>            // 102</li>
+<li><code>CIRRUS_ENGINE</code>             // 103</li>
 </ul>
 </li>
 </ul>
@@ -295,7 +295,7 @@ Set the sensor network of the simulator in the order below and configure the UDP
 <h4 id="1-place-sensors-on-the-aircraft">1) Place sensors on the aircraft<a class="headerlink" href="#1-place-sensors-on-the-aircraft" title="Permanent link"></a></h4>
 <div markdown="span" class="bs-callout bs-callout-success">
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
-For details on how to place the sensor, see the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">Sensor Settings</a> part.
+For details on how to place the sensor, see the <a href="../sensors/#sensor-placement">Sensor Placement</a> section.
 </div>
 
 <h4 id="2-configure-destination-ipport">2) Configure Destination IP/Port<a class="headerlink" href="#2-configure-destination-ipport" title="Permanent link"></a></h4>
@@ -311,6 +311,8 @@ For details on how to place the sensor, see the <a href="https://morai.atlassian
 <h4 id="3-network-connection_1">3) Network connection<a class="headerlink" href="#3-network-connection_1" title="Permanent link"></a></h4>
 <p>Click <strong>Connect</strong> at the bottom of <strong>Network Settings</strong>. <Br>
 Then, it enters into a standby state in which sensor messages can be transmitted.</p>
+<p>In the case of a Camera sensor, when a sensor network is connected, a preview window appears on the left side of the sensor setting window as shown below.
+<img src="../../img/network-sensor-preview.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h3 id="step-2-publishing-to-ros2">Step 2: Publishing to ROS2<a class="headerlink" href="#step-2-publishing-to-ros2" title="Permanent link"></a></h3>
 <p>For this step, you need to install and run <strong>UDP to ROS2 Bridge</strong>.</p>
 <div markdown="span" class="bs-callout bs-callout-success">

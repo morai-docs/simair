@@ -83,9 +83,25 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Sensor Settings</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#terminology">Terminology</a>
+    <li class="toctree-l2"><a class="reference internal" href="#sensor-placement">Sensor Placement</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-sensors-or-placing-different-types-of-sensors">Adding sensors or placing different types of sensors</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#conventions">Conventions</a>
+    <li class="toctree-l3"><a class="reference internal" href="#deleting-placed-sensors">Deleting placed sensors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sensor-parameter-setting">Sensor Parameter Setting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#location-coordinates">Location Coordinates</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lens-distortion-of-camera">Lens Distortion of Camera</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gaussian-noise-of-gnss">Gaussian Noise of GNSS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#network-settings">Network Settings</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -115,73 +131,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="how-to-use-sensors-in-morai-sim-air">How to Use Sensors in MORAI SIM Air<a class="headerlink" href="#how-to-use-sensors-in-morai-sim-air" title="Permanent link"></a></h1>
-<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link"></a></h2>
-<p>The main teminology used for this documents is as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Old Variable Name</th>
-<th>New Variable Name or Expression</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>current_page</td>
-<td>page</td>
-</tr>
-<tr>
-<td>include_nav</td>
-<td>nav&#124;length&gt;1</td>
-</tr>
-<tr>
-<td>include_next_prev</td>
-<td>(page.next_page or page.previous_page)</td>
-</tr>
-<tr>
-<td>site_name</td>
-<td>config.site_name</td>
-</tr>
-<tr>
-<td>site_author</td>
-<td>config.site_author</td>
-</tr>
-<tr>
-<td>page_description</td>
-<td>config.site_description</td>
-</tr>
-<tr>
-<td>repo_url</td>
-<td>config.repo_url</td>
-</tr>
-<tr>
-<td>repo_name</td>
-<td>config.repo_name</td>
-</tr>
-<tr>
-<td>site_url</td>
-<td>config.site_url</td>
-</tr>
-<tr>
-<td>copyright</td>
-<td>config.copyright</td>
-</tr>
-<tr>
-<td>google_analytics</td>
-<td>config.google_analytics</td>
-</tr>
-<tr>
-<td>homepage_url</td>
-<td>nav.homepage.url</td>
-</tr>
-<tr>
-<td>favicon</td>
-<td>{{ base_url }}/img/favicon.ico</td>
-</tr>
-</tbody>
-</table>
-<h2 id="conventions">Conventions<a class="headerlink" href="#conventions" title="Permanent link"></a></h2>
-<p>The main teminology used for this documents is as follows:</p>
+                <h1 id="sensor-settings">Sensor Settings<a class="headerlink" href="#sensor-settings" title="Permanent link"></a></h1>
+<p>This section describes how to place each sensor provided by the simulator on the aircraft and set the sensor parameters to obtain sensor data.</p>
+<hr />
+<h2 id="sensor-placement">Sensor Placement<a class="headerlink" href="#sensor-placement" title="Permanent link"></a></h2>
+<p>Place the sensors on the aircraft in the order below.</p>
+<p>1) Click <strong>∨</strong> on the right side of the Sensor icon in the menu at the top left as shown below.</p>
+<p><img src="../../img/ug-sensor-place.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p>1) When you select a sensor to be placed in the popped-up sensor list, the following <strong>Sensor Settings</strong> window appears on the right. 
+<br></p>
+<p>Ex) When selecting <strong>Camera</strong>
+<img src="../../img/ug-sensor-setting1.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p><img src="../../img/ug-sensor-setting.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p>3) When you click the mouse on the position of the aircraft where you want to place the sensor, the corresponding sensor item is created in <strong>Sensor Settings</strong>.
+<Br></p>
+<p>Ex) When placing <strong>Camera</strong>
+<img src="../../img/ug-sensor-setting-camera.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h3 id="adding-sensors-or-placing-different-types-of-sensors">Adding sensors or placing different types of sensors<a class="headerlink" href="#adding-sensors-or-placing-different-types-of-sensors" title="Permanent link"></a></h3>
+<p>The method of adding the same type of sensor or placing a different type of sensor is the same as the sensor placement method <strong>1) to 3)</strong> above.</p>
+<h3 id="deleting-placed-sensors">Deleting placed sensors<a class="headerlink" href="#deleting-placed-sensors" title="Permanent link"></a></h3>
+<p>In <strong>Sensor Settings</strong> on the right, click <strong>...</strong> of the sensor item you want to delete and click <strong>Delete</strong>.</p>
+<p>Ex) When deleting <strong>Camera</strong>
+<img src="../../img/ug-sensor-setting-delete2.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+The method for deleting other types of sensors is the same as above.
+</div>
+
+<h2 id="sensor-parameter-setting">Sensor Parameter Setting<a class="headerlink" href="#sensor-parameter-setting" title="Permanent link"></a></h2>
+<p>In the sensor parameter setting, the parameters for the location coordinates (x, y, z) and posture (rotation angle of roll, pitch, and yaw) of the placed sensor and the specialized functions supported by each sensor model are set.</p>
+<p>When you click the created sensor item name (eg. <strong>Camera-0</strong>), the parameter setting window for the corresponding sensor appears as shown below.</p>
+<p>Ex) Parameter setting window for <strong>Camera</strong>
+<img src="../../img/ug-sensor-setting-camera2.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h3 id="location-coordinates">Location Coordinates<a class="headerlink" href="#location-coordinates" title="Permanent link"></a></h3>
+<p>The location coordinates of all sensors provided by the simulator are set based on the aircraft coordinate system below.
+<img src="../../img/ug-sensor-location.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h3 id="lens-distortion-of-camera">Lens Distortion of Camera<a class="headerlink" href="#lens-distortion-of-camera" title="Permanent link"></a></h3>
+<p>The simulator's camera sensor model provides <strong>Lens Distortion</strong> as shown below.</p>
+<p><img src="../../img/sensor-lensdistortion.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p>The Lens Distortion effect reproduces the appearance of a real camera lens by distorting the final rendered image.</p>
+<p>The setting parameter for lens distortion is as follows: </p>
+<ul>
+<li><strong>k1, k2, k3</strong>: parameters related to radial distortion, simulating the phenomenon of radial distortion by the refractive index of a convex lens</li>
+<li><strong>P1, P2</strong>: Parameter for making sensor attachment errors that occur during the camera assembly process</li>
+</ul>
+<h3 id="gaussian-noise-of-gnss">Gaussian Noise of GNSS<a class="headerlink" href="#gaussian-noise-of-gnss" title="Permanent link"></a></h3>
+<p>The simulator's GPS sensor model supports <strong>Gaussian Noise</strong> as shown below.</p>
+<p><img src="../../img/sensor-gaussian.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p>The value of Gaussian Noise is adjusted by entering <strong>Mean(m)</strong> and <strong>Stdev(%)</strong> values.</p>
+<h3 id="network-settings">Network Settings<a class="headerlink" href="#network-settings" title="Permanent link"></a></h3>
+<p>Network settings for sensor models provided to the simulator support only <strong>UDP</strong> communication as shown below.</p>
+<p><img src="../../img/sensor-networksetting.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+For information on how to set up a sensor network, see the <a href="../network/#sending-sensor-messages">Sending Sensor Messages</a> section.</div>
               
             </div>
           </div><footer>
