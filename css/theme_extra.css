@@ -169,10 +169,23 @@ form .search-query {
     border: none;
 }
 
+thead {
+    z-index: 1000;
+    position: relative;
+}
+
 td, th {
     border: 1px solid #e1e4e5 !important; /* csslint allow: important */
     border-collapse: collapse;
 }
+
+tbody {
+    z-index: 100;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 
 .rst-content table {
     font-size: 100%; /*230316*/

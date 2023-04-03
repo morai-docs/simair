@@ -27,6 +27,7 @@
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/c++.min.js"></script>
       <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
@@ -86,7 +87,7 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#step-1-subscribe-to-ros2-messages">Step 1: Subscribe to ROS2 messages</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-2-udp-network-setting-in-the-simulator">Step 2: UDP network setting in the simulator</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-udp-network-settings-in-the-simulator">Step 2: UDP network settings in the simulator</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#1-activate-the-network-menu">1) Activate the network menu</a>
     </li>
@@ -118,6 +119,14 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#network-message-specifications">Network Message Specifications</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#udp-messages-structure">UDP Messages Structure</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#header-information">Header Information</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#data-information">Data Information</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#udp-recieve-messages">UDP Recieve Messages</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#cirrus_tx">Cirrus_tx</a>
@@ -127,6 +136,34 @@
     <li class="toctree-l4"><a class="reference internal" href="#cirrus_braking">Cirrus_Braking</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#cirrus_engine">Cirrus_Engine</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#udp-send-messages">UDP Send Messages</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#gnss">GNSS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#imu">IMU</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#camera-image">Camera (Image)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#radar">Radar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lidar">Lidar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ros2-send-messages">ROS2 Send Messages</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#gnss_1">GNSS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#imu_1">IMU</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#image-camera">Image (Camera)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#radar_1">Radar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lidar_1">Lidar</a>
     </li>
         </ul>
     </li>
@@ -204,7 +241,7 @@ The current simulator does not provide direct support for transmitting/receiving
 </div>
 
 <h2 id="receiving-aircraft-control-messages">Receiving Aircraft Control Messages<a class="headerlink" href="#receiving-aircraft-control-messages" title="Permanent link"></a></h2>
-<p>When the simulator receives control messages by ROS2 communication, <br>
+<p>For the simulator to receive ROS2 messages via UDP, <br>
 Configure the ROS2 to UDP communication environment and set the network of the simulator in the order below.</p>
 <h3 id="step-1-subscribe-to-ros2-messages">Step 1: Subscribe to ROS2 messages<a class="headerlink" href="#step-1-subscribe-to-ros2-messages" title="Permanent link"></a></h3>
 <p>For this step, you need to install and run <strong>UDP to ROS2 Bridge</strong>.</p>
@@ -212,7 +249,7 @@ Configure the ROS2 to UDP communication environment and set the network of the s
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">UDP to ROS2 Bridge User Guide</a> provided separately.
 </div>
 
-<h3 id="step-2-udp-network-setting-in-the-simulator">Step 2: UDP network setting in the simulator<a class="headerlink" href="#step-2-udp-network-setting-in-the-simulator" title="Permanent link"></a></h3>
+<h3 id="step-2-udp-network-settings-in-the-simulator">Step 2: UDP network settings in the simulator<a class="headerlink" href="#step-2-udp-network-settings-in-the-simulator" title="Permanent link"></a></h3>
 <h4 id="1-activate-the-network-menu">1) Activate the network menu<a class="headerlink" href="#1-activate-the-network-menu" title="Permanent link"></a></h4>
 <p>Click <strong>Network</strong> in the top left menu as shown below.
 <img src="../../img/network-setting.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
@@ -248,10 +285,12 @@ Then, it enters into a standby state in which a control message can be received.
 </ul>
 <div markdown="span" class="bs-callout bs-callout-success">
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
-For details on the types and detailed structure of UDP messages received in GHOST MODE or EXTERNAL CTRL, see the <a href=#udp-recieve-messages>UDP Recieve Messages</a> section.
+For details on the types and structure of UDP messages received in GHOST MODE or EXTERNAL CTRL, see the <a href=#udp-recieve-messages>UDP Recieve Messages</a> section.
 </div>
 
 <h2 id="sending-sensor-messages">Sending Sensor Messages<a class="headerlink" href="#sending-sensor-messages" title="Permanent link"></a></h2>
+<p>For the simulator to send UDP messages via ROS2, <br>
+Set the sensor network of the simulator in the order below and configure the UDP to ROS2 communication environment.</p>
 <h3 id="step-1-senosr-network-settings-in-the-simulator">Step 1: Senosr network settings in the simulator<a class="headerlink" href="#step-1-senosr-network-settings-in-the-simulator" title="Permanent link"></a></h3>
 <h4 id="1-place-sensors-on-the-aircraft">1) Place sensors on the aircraft<a class="headerlink" href="#1-place-sensors-on-the-aircraft" title="Permanent link"></a></h4>
 <div markdown="span" class="bs-callout bs-callout-success">
@@ -278,12 +317,98 @@ Then, it enters into a standby state in which sensor messages can be transmitted
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>See the <a href="https://morai.atlassian.net/wiki/external/1372881223/NzI2NTk2NWU0ODBjNDJmYTkwOGRjZDBiMWEwMmZhMzI">UDP to ROS2 Bridge User Guide</a> provided separately.
 </div>
 
+<div markdown="span" class="bs-callout bs-callout-success">
+✅ <span class = "suc-calloutTitle"> TIPS </span> <br>
+For details on the types and structure of UDP and ROS2 messages sent by the simulator, see the <a href=#udp-send-messages>UDP Send Messages</a> and <a href=#ros2-send-messages>ROS2 Send Messages</a>  section.
+</div>
+
 <h2 id="network-message-specifications">Network Message Specifications<a class="headerlink" href="#network-message-specifications" title="Permanent link"></a></h2>
 <p>This section describes details such as the type and format of messages received and transmitted by MORAI SIM: Air as described above.</p>
+<h3 id="udp-messages-structure">UDP Messages Structure<a class="headerlink" href="#udp-messages-structure" title="Permanent link"></a></h3>
+<p>All receiving and sending UDP messages are composed of <strong>'Header + Data'</strong>.</p>
+<p>If the UDP packet size exceeds 65000, it is internally separated and transmitted, and reassembled at the receiving point.
+However, if the receiver uses Morai's UDP module, even if the defined max buffer is less than 65000, the separation logic works when trying to send a message larger than the max buffer.</p>
+<p>Ex) #define Max_buffer 1024: If the total data size to be sent exceeds 1024, it is sent separately.</p>
+<h4 id="header-information">Header Information<a class="headerlink" href="#header-information" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-c++">struct MoraiHeader
+{
+    char header_name[12];         // MoraiHeader
+    int data_type;                 // data_type.h 참조
+    int data_size;                 // data size
+};</code></pre>
+<Br>
+<img src="../../img/header-1680492926933.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="data-information">Data Information<a class="headerlink" href="#data-information" title="Permanent link"></a></h4>
+<p>The detailed data structure of the UDP message is described for each received and transmitted message as follows.</p>
+<ul>
+<li>4 recieve control messages: <ul>
+<li><code>Cirrus_tx</code></li>
+<li><code>Cirrus_ControlPosition</code></li>
+<li><code>Cirrus_Braking</code> </li>
+<li><code>Cirrus_Engine</code></li>
+</ul>
+</li>
+<li>5 send sensor messages: <ul>
+<li><code>Sensor_NavSatFix</code> (GNSS)</li>
+<li><code>Sensor_Imu</code></li>
+<li><code>Sensor_Image</code></li>
+<li><code>Sensor_Radar</code></li>
+<li><code>SensorLidar</code></li>
+</ul>
+</li>
+</ul>
+<pre class="highlight"><code class="language-c++">/*
+Morai Data type define
+
+*/
+
+#ifndef DATA_TYPE_H
+#define DATA_TYPE_H
+
+enum class MoraiDataType : uint32_t
+{
+    NONE = 0,
+
+    SENSOR_GNSS,
+    SENSOR_IMAGE,
+    SENSOR_RADAR,
+    SENSOR_IMU,
+    SENSOR_LIDAR,
+
+    CIRRUS_TX = 0x64,               // 100  cirrus -&gt; morai
+    CIRRUS_CONTROL_POSITION,        // 101  SIM -&gt; JSBSim
+    CIRRUS_BRAKING,                 // 102  
+    CIRRUS_ENGINE,                  // 103
+
+    LARGE_DATA = 0x3E8,             // 1000 for test
+};
+
+#endif</code></pre>
+<p><Br>
+And the data structure of all receiving and sending UDP messages includes the following common <code>struct</code> type.</p>
+<pre class="highlight"><code>struct Ros_Timestamp
+{
+    int32_t sec;
+    uint32_t nanosec;
+};
+
+struct Ros_HEADER
+{
+    Ros_Timestamp stamp;
+    uint8_t str_len;
+    char* frame_id;
+};
+
+struct Sensor_NavSatStatus
+{
+    int8_t status;
+    uint16_t service;
+};
+</code></pre>
 <h3 id="udp-recieve-messages">UDP Recieve Messages<a class="headerlink" href="#udp-recieve-messages" title="Permanent link"></a></h3>
-<p>The data structure and packets for each UDP message sent from the external Cirrus system to MORAI SIM are as follows.</p>
+<p>The data structure and packets for each UDP message received by Morai SIM from the external Cirrus system are as follows.</p>
 <h4 id="cirrus_tx">Cirrus_tx<a class="headerlink" href="#cirrus_tx" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-python">struct Cirrus_Tx
+<p><pre class="highlight"><code class="language-C++">struct Cirrus_Tx
 {
     float lon;              // deg
     float lat;              // deg
@@ -299,7 +424,7 @@ Then, it enters into a standby state in which sensor messages can be transmitted
 <Br>
 <img src="../../img/cirrus_tx.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="cirrus_controlposition">Cirrus_ControlPosition<a class="headerlink" href="#cirrus_controlposition" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-python">struct Cirrus_ControlPosition
+<p><pre class="highlight"><code class="language-C++">struct Cirrus_ControlPosition
 {
     float SetDaCmd;             // get_aileron              -1 ~ +1
     float SetRollTrimCmd;       // get_aileron_trim         (-0.1 ~ +0.1)
@@ -313,19 +438,479 @@ Then, it enters into a standby state in which sensor messages can be transmitted
 <Br>
 <img src="../../img/Cirrus_ControlPosition.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="cirrus_braking">Cirrus_Braking<a class="headerlink" href="#cirrus_braking" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-python">struct Cirrus_Braking
+<p><pre class="highlight"><code class="language-C++">struct Cirrus_Braking
 {
     float SetBrake;             // Left + Right             0~1   
 };</code></pre>
 <Br>
 <img src="../../img/Cirrus_Braking.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="cirrus_engine">Cirrus_Engine<a class="headerlink" href="#cirrus_engine" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-python">struct Cirrus_Engine
+<p><pre class="highlight"><code class="language-C++">struct Cirrus_Engine
 {
     float SetThrottleCmd;      // get_throttle(i)           0~1
 };</code></pre>
 <Br>
 <img src="../../img/Cirrus_Engine.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h3 id="udp-send-messages">UDP Send Messages<a class="headerlink" href="#udp-send-messages" title="Permanent link"></a></h3>
+<p>The data structure and packet for each UDP message transmitted by MORA SIM to the external Cirrus system are as follows.</p>
+<h4 id="gnss">GNSS<a class="headerlink" href="#gnss" title="Permanent link"></a></h4>
+<pre class="highlight"><code class="language-C++">struct Sensor_NavSatFix
+{
+    int id;
+    Ros_HEADER header;
+    Sensor_NavSatStatus status;
+    double latitude;
+    double longitude;
+    double altitude;
+    double position_covariance[9];
+    uint8_t position_covariance_type;
+};</code></pre>
+<p><img src="../../img/gnss-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="imu">IMU<a class="headerlink" href="#imu" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-C++">struct Sensor_Imu
+{
+    uint32_t id;
+    Ros_HEADER header;
+    geometry_msgs::Quarternion orientation;
+    double orientation_covariance[9];
+    geometry_msgs::Vector3 angular_velocity;
+    double angular_velocity_covariance[9];
+    geometry_msgs::Vector3 linear_acceleration;
+    double liner_acceleration_covariance[9];
+};</code></pre>
+<Br>
+<img src="../../img/imu-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="camera-image">Camera (Image)<a class="headerlink" href="#camera-image" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-C++">struct Sensor_Image
+{
+    int id;
+    Ros_HEADER header;
+    uint32_t height;
+    uint32_t width;
+    uint16_t str_len;
+    char* encoding;
+    uint8_t is_bigendian;
+    uint32_t step;
+    uint8_t* data;
+};</code></pre>
+<Br>
+<img src="../../img/image-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="radar">Radar<a class="headerlink" href="#radar" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-c++">struct Sensor_Radar 
+{
+    uint32_t id;
+    Ros_HEADER header;
+    uint8_t num_detections;
+    Radar_Detection detections[64];
+};</code></pre>
+<Br>
+<img src="../../img/radar-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="lidar">Lidar<a class="headerlink" href="#lidar" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-c++">typedef struct PointField
+{
+    uint8_t name_length;
+    std::string name;
+    uint32_t offset;
+    uint8_t datatype;
+    uint32_t count;
+} POINT_FIELD;
+
+typedef struct SensorLidar
+{
+    uint32_t id;
+    RosHeader header;
+    uint32_t height;            // 2D structure of the point cloud.If the cloud is unordered, height is
+    uint32_t width;             // 1 and width is the length of the point cloud.
+    uint8_t fields_len;         // size of PointField
+    PointField* fields;           // Describes the channels and their layout in the binary data blob.
+    bool    is_bigendian;       // Is this data bigendian ?
+    uint32_t  point_step;         // Length of a point in bytes
+    uint32_t  row_step;           // Length of a row in bytes
+    uint8_t* data;                // Actual point data, size is(row_step* height)
+    bool is_dense;              // True if there are no invalid points
+} SENSRO_LIDAR;</code></pre>
+<Br></p>
+<p><img src="../../img/lidar-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h3 id="ros2-send-messages">ROS2 Send Messages<a class="headerlink" href="#ros2-send-messages" title="Permanent link"></a></h3>
+<p>The type and data format for each ROS2 message transmitted by MORA SIM to the external Cirrus system are as follows.</p>
+<h4 id="gnss_1">GNSS<a class="headerlink" href="#gnss_1" title="Permanent link"></a></h4>
+<ul>
+<li>
+<p>Message Type: <a href="https://github.com/ros2/common_interfaces/blob/galactic/sensor_msgs/msg/NavSatFix.msg">sensor_msgs/msg/NavSatFix</a></p>
+</li>
+<li>
+<p>Data Format</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Name</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>header</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/std_msgs/msg/Header.msg">Header</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>status</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/sensor_msgs/msg/NavSatStatus.msg">NavSatStatus</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>latitude</td>
+<td>double</td>
+<td>deg</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>longitude</td>
+<td>double</td>
+<td>deg</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>altitude</td>
+<td>double</td>
+<td>deg</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>position_covariance</td>
+<td>double[9]</td>
+<td></td>
+<td>East, North, and Up (ENU), in row major order</td>
+</tr>
+<tr>
+<td>7</td>
+<td>position_covariance_type</td>
+<td>uint8</td>
+<td>deg</td>
+<td><code>0</code> : COVARIANCE_TYPE_UNKNOWN <br> <code>1</code> : COVARIANCE_TYPE_APPROXIMATED <br> <code>2</code> : COVARIANCE_TYPE_DIAGONAL_KNOWN <br> <code>3</code> : COVARIANCE_TYPE_KNOWN</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="imu_1">IMU<a class="headerlink" href="#imu_1" title="Permanent link"></a></h4>
+<ul>
+<li>
+<p>Message Type: <a href="https://github.com/ros2/common_interfaces/blob/galactic/sensor_msgs/msg/Imu.msg">sensor_msgs/msg/Imu</a></p>
+</li>
+<li>
+<p>Data Format</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Name</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>header</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/std_msgs/msg/Header.msg">Header</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>orientation</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/geometry_msgs/msg/Quaternion.msg">Quaternion</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>orientation_covariance</td>
+<td>double[9]</td>
+<td></td>
+<td>Row major about x, y, z axes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>angular_velocity</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/geometry_msgs/msg/Vector3.msg">Vector3</a></td>
+<td>rad/sec</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>angular_velocity_covariance</td>
+<td>double[9]</td>
+<td></td>
+<td>Row major about x, y, z axes</td>
+</tr>
+<tr>
+<td>6</td>
+<td>linear_acceleration</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/geometry_msgs/msg/Vector3.msg">Vector3</a></td>
+<td>m/s^s</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>linear_acceleration_covariance</td>
+<td>double[9]</td>
+<td></td>
+<td>Row major about x, y, z axes</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="image-camera">Image (Camera)<a class="headerlink" href="#image-camera" title="Permanent link"></a></h4>
+<ul>
+<li>
+<p>Message Type: <a href="https://github.com/ros2/common_interfaces/blob/galactic/sensor_msgs/msg/Image.msg">sensor_msgs/msg/Image</a></p>
+</li>
+<li>
+<p>Data Format</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Name</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>header</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/std_msgs/msg/Header.msg">Header</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>height</td>
+<td>uint32</td>
+<td></td>
+<td>number of rows</td>
+</tr>
+<tr>
+<td>3</td>
+<td>width</td>
+<td>uint32</td>
+<td></td>
+<td>number of columns</td>
+</tr>
+<tr>
+<td>4</td>
+<td>encoding</td>
+<td>string</td>
+<td></td>
+<td>'bgra8'</td>
+</tr>
+<tr>
+<td>5</td>
+<td>is_bigendian</td>
+<td>uint8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>step</td>
+<td>uint32</td>
+<td></td>
+<td>value is (width * 4)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>data</td>
+<td>uint8[]</td>
+<td></td>
+<td>size is (step * height)</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="radar_1">Radar<a class="headerlink" href="#radar_1" title="Permanent link"></a></h4>
+<ul>
+<li>
+<p>Message Type: <a href="https://github.com/MORAI-Autonomous/MORAI-ROS2_morai_msgs/blob/main/msg/RadarDetections.msg">morai_msgs/msg/RadarDetections</a></p>
+</li>
+<li>
+<p>Data Format</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Name</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>header</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/std_msgs/msg/Header.msg">Header</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>detections</td>
+<td>RadarDetection[]</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>RadarDetection</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Name</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>detection_id</td>
+<td>uint16</td>
+<td></td>
+<td>Index of each radar detection point</td>
+</tr>
+<tr>
+<td>2</td>
+<td>position</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/geometry_msgs/msg/Point.msg">Point</a></td>
+<td>m</td>
+<td>x, y, z position of each radar detection point</td>
+</tr>
+<tr>
+<td>3</td>
+<td>azimuth</td>
+<td>float</td>
+<td>deg</td>
+<td>azimuth angle of each radar detection point in Degree</td>
+</tr>
+<tr>
+<td>4</td>
+<td>rangerate</td>
+<td>float</td>
+<td>m/s</td>
+<td>relative velocity of the radar detected target w.r.t radial direction</td>
+</tr>
+<tr>
+<td>5</td>
+<td>amplitude</td>
+<td>float</td>
+<td></td>
+<td>amplitude of the reflected signal of the radar detected target(rcs)</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="lidar_1">Lidar<a class="headerlink" href="#lidar_1" title="Permanent link"></a></h4>
+<ul>
+<li>
+<p>Message Type: <a href="https://github.com/ros2/common_interfaces/blob/galactic/sensor_msgs/msg/PointCloud2.msg">sensor_msgs/msg/PointCloud2</a></p>
+</li>
+<li>
+<p>Data Format</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Name</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>header</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/std_msgs/msg/Header.msg">Header</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>height</td>
+<td>uint32</td>
+<td></td>
+<td>If the cloud is unordered, height is 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>width</td>
+<td>uint32</td>
+<td></td>
+<td>Width is the length of the point cloud</td>
+</tr>
+<tr>
+<td>4</td>
+<td>fields</td>
+<td><a href="https://github.com/ros2/common_interfaces/blob/galactic/sensor_msgs/msg/PointField.msg">PointField</a>[]</td>
+<td></td>
+<td>Describes the channels and their layout in the binary data blob</td>
+</tr>
+<tr>
+<td>5</td>
+<td>is_bigendian</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>point_step</td>
+<td>uint32</td>
+<td></td>
+<td>Length of a point in bytes</td>
+</tr>
+<tr>
+<td>7</td>
+<td>data</td>
+<td>uint8[]</td>
+<td></td>
+<td>size is (row_step*height)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>is_dense</td>
+<td>bool</td>
+<td></td>
+<td>True if there are no invalid points</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
               
             </div>
           </div><footer>
