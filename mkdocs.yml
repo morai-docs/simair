@@ -25,7 +25,7 @@ nav:
   - Using MORAI SIM Air:
     #- User Guide: user-guide/
     - Basic Controls: user-guide/basic-controls.md
-    - Network Settings: user-guide/network.md
+    - user-guide/network.md
     - Sensor Settings: user-guide/sensors.md
 
 theme: 
@@ -58,7 +58,7 @@ markdown_extensions:
 
 
 
-copyright: Copyright &copy; 2023 <a href="https://www.morai.ai">MORAI Inc.</a> Maintained by the <a href="https://github.com/morai-docs">MORAI-Docs Team</a>
+copyright: Copyright &copy; 2023 <a href="https://www.morai.ai">MORAI Inc.</a> Maintained by the <a href="https://github.com/morai-docs">MORAI-Docs Team.</a>
 
 plugins:
   - search

@@ -1,4 +1,4 @@
-# Network Settings
+# Network Configuration
 This section describes the configuration of the network environment of MORAI SIM: Air, the setting method for data communication between external systems, and sending/receiving messages.
 
 ---
