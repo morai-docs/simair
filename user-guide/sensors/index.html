@@ -136,9 +136,9 @@
 <hr />
 <h2 id="sensor-placement">Sensor Placement<a class="headerlink" href="#sensor-placement" title="Permanent link"></a></h2>
 <p>Place the sensors on the aircraft in the order below.</p>
-<p>1) Click <strong>∨</strong> on the right side of the Sensor icon in the menu at the top left as shown below.</p>
+<p>1) Click <strong>∨</strong> on the right side of the sensor icon in the menu at the top left as shown below.</p>
 <p><img src="../../img/ug-sensor-place.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
-<p>1) When you select a sensor to be placed in the popped-up sensor list, the following <strong>Sensor Settings</strong> window appears on the right. 
+<p>2) When you select a sensor to be placed in the popped-up sensor list, the following <strong>Sensor Settings</strong> window appears on the right. 
 <br></p>
 <p>Ex) When selecting <strong>Camera</strong>
 <img src="../../img/ug-sensor-setting1.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
@@ -159,28 +159,28 @@ The method for deleting other types of sensors is the same as above.
 </div>
 
 <h2 id="sensor-parameter-setting">Sensor Parameter Setting<a class="headerlink" href="#sensor-parameter-setting" title="Permanent link"></a></h2>
-<p>In the sensor parameter setting, the parameters for the location coordinates (x, y, z) and posture (rotation angle of roll, pitch, and yaw) of the placed sensor and the specialized functions supported by each sensor model are set.</p>
-<p>When you click the created sensor item name (eg. <strong>Camera-0</strong>), the parameter setting window for the corresponding sensor appears as shown below.</p>
+<p>In the sensor parameter setting, the parameters for the location coordinates (x, y, z) and posture (rotation angle of roll, pitch, and yaw) of the placed sensor and the specialized functions supported by each sensor model are set. <br>
+When you click the created sensor item name (eg. <strong>Camera-0</strong>), the parameter setting window for the corresponding sensor appears as shown below.</p>
 <p>Ex) Parameter setting window for <strong>Camera</strong>
 <img src="../../img/ug-sensor-setting-camera2.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h3 id="location-coordinates">Location Coordinates<a class="headerlink" href="#location-coordinates" title="Permanent link"></a></h3>
-<p>The location coordinates of all sensors provided by the simulator are set based on the aircraft coordinate system below.
-<img src="../../img/ug-sensor-location.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p>The location coordinates of all sensors provided by the simulator are set based on the aircraft coordinate system below.</p>
+<p><img src="../../img/ug-sensor-location.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h3 id="lens-distortion-of-camera">Lens Distortion of Camera<a class="headerlink" href="#lens-distortion-of-camera" title="Permanent link"></a></h3>
-<p>The simulator's camera sensor model provides <strong>Lens Distortion</strong> as shown below.</p>
+<p>The Lens Distortion effect reproduces the appearance of a real camera lens by distorting the final rendered image. <br>
+The simulator's camera sensor model provides Lens Distortion as shown below.</p>
 <p><img src="../../img/sensor-lensdistortion.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
-<p>The Lens Distortion effect reproduces the appearance of a real camera lens by distorting the final rendered image.</p>
-<p>The setting parameter for lens distortion is as follows: </p>
+<p>The setting parameter for lens distortion is as follows:</p>
 <ul>
-<li><strong>k1, k2, k3</strong>: parameters related to radial distortion, simulating the phenomenon of radial distortion by the refractive index of a convex lens</li>
-<li><strong>P1, P2</strong>: Parameter for making sensor attachment errors that occur during the camera assembly process</li>
+<li>K1, K2, K3: parameters related to radial distortion, simulating the phenomenon of radial distortion by the refractive index of a convex lens</li>
+<li>P1, P2: Parameter for making sensor attachment errors that occur during the camera assembly process</li>
 </ul>
 <h3 id="gaussian-noise-of-gnss">Gaussian Noise of GNSS<a class="headerlink" href="#gaussian-noise-of-gnss" title="Permanent link"></a></h3>
-<p>The simulator's GPS sensor model supports <strong>Gaussian Noise</strong> as shown below.</p>
+<p>The simulator's GPS sensor model supports Gaussian Noise as shown below.</p>
 <p><img src="../../img/sensor-gaussian.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <p>The value of Gaussian Noise is adjusted by entering <strong>Mean(m)</strong> and <strong>Stdev(%)</strong> values.</p>
 <h3 id="network-settings">Network Settings<a class="headerlink" href="#network-settings" title="Permanent link"></a></h3>
-<p>Network settings for sensor models provided to the simulator support only <strong>UDP</strong> communication as shown below.</p>
+<p>The network of the sensor model provided by the simulator only sets UDP communication as shown below.</p>
 <p><img src="../../img/sensor-networksetting.png" style="width: 500px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <div markdown="span" class="bs-callout bs-callout-success">
 ✅ <span class = "suc-calloutTitle"> TIPS </span> <br>

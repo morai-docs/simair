@@ -136,19 +136,19 @@ MORAI SIM: Air virtualizes various sensors and flight dynamics model (FDM) speci
 <blockquote>
 <ul>
 <li>Provides a simulation environment based on <a href="https://en.wikipedia.org/wiki/Unreal_Engine">Unreal Engine</a>, a physics engine </li>
-<li>Supports realistic flight dynamics model (FDM) for <a href="https://sketchfab.com/3d-models/cirrus-sr-22-f0f1089f374f4d398f0483403fe6af7a">Cirrus SR22</a> and 6 degrees of freedom (DOF) data</li>
+<li>Supports realistic flight dynamics model (FDM) for <a href="https://cirrusaircraft.com/aircraft/sr22t/">Cirrus SR22T</a> and 6 degrees of freedom (DOF) data</li>
 <li>Supports realistic flight dynamics model (FDM) developed with <a href="https://jsbsim.sourceforge.net/JSBSim/index.html">JSBSim</a>, and 6 degrees of freedom (DOF) data</li>
 <li>Reproduces weather and time variation with dynamic environment</li>
-<li>Integration with external sensors and systems: Cameras, GNSS, IMU, RADAR, 3D LiDAR</li>
+<li>Integration with external sensors and systems: Camera, GNSS, IMU, RADAR, 3D LiDAR</li>
 <li>Supports real-time transmission of flight status messages and sensor data through ROS2 and UDP communication</li>
 </ul>
 </blockquote>
 <h3 id="simulation-environment-based-on-unreal-engine">Simulation environment based on Unreal Engine<a class="headerlink" href="#simulation-environment-based-on-unreal-engine" title="Permanent link"></a></h3>
-<p><strong>MORAI SIM: Air</strong> utilizes the physics engine, Unreal Engine to provide a high-fidelity simulation environment for autonomous aerial vehicles, and it can reproduce object movement, physical conditions such as collision and penetration, as well as color and texture realistically.
+<p>MORAI SIM: Air utilizes the physics engine, Unreal Engine to provide a high-fidelity simulation environment for autonomous aerial vehicles, and it can reproduce object movement, physical conditions such as collision and penetration, as well as color and texture realistically.
 <br></p>
-<p>The Unreal engine allows for the creation of highly detailed 3D environments and provides a sophisticated physics engine that can simulate the behavior of objects in a realistic manner. This means that the movement of the aerial vehicles, as well as other objects in the simulation environment, are accurately represented.
+<p>Unreal Engine allows for the creation of highly detailed 3D environments and provides a sophisticated physics engine that can simulate the behavior of objects in a realistic manner. This means that the movement of the aerial vehicles, as well as other objects in the simulation environment, are accurately represented.
 <br></p>
-<p>Moreover, the Unreal engine can render textures and colors realistically, which helps to create a more immersive simulation experience for users. This allows users to visualize and interact with the simulation environment in a way that closely mirrors the real-world environment, and enables them to test and validate the performance of their autonomous flight systems under realistic conditions.</p>
+<p>Moreover, the Unreal Engine can render textures and colors realistically, which helps to create a more immersive simulation experience for users. This allows users to visualize and interact with the simulation environment in a way that closely mirrors the real-world environment, and enables them to test and validate the performance of their autonomous flight systems under realistic conditions.</p>
 <figure>
     <img src="../../img/into-duluth.png" style="width: 1000px; height: auto;" alt="sensor">
     <figcaption style="padding-top: 10px;"><b> Figure 1. 3D Simulation environment for Duluth airport provided by MORAI SIM: Air</b></figcaption>
@@ -156,16 +156,16 @@ MORAI SIM: Air virtualizes various sensors and flight dynamics model (FDM) speci
 
 <h3 id="supports-realistic-flight-dynamics-model-and-6-dof">Supports realistic flight dynamics model and 6 DOF<a class="headerlink" href="#supports-realistic-flight-dynamics-model-and-6-dof" title="Permanent link"></a></h3>
 <p>MORAI SIM: Air supports realistic flight dynamics models (FDM) based on <a href="https://jsbsim.sourceforge.net/JSBSim/index.html">JSBSim</a> for simulation modeling of the behavior of aircraft engines and other systems.<br> 
-Additionally, MORAI SIM: Air implements the <a href="https://sketchfab.com/3d-models/cirrus-sr-22-f0f1089f374f4d398f0483403fe6af7a">Cirrus SR22</a> aircraft model and 6 degrees of freedom (DOF) data, providing a realistic simulation experience.</p>
+Additionally, MORAI SIM: Air implements the <a href="https://cirrusaircraft.com/aircraft/sr22t">Cirrus SR22T</a> aircraft model and 6 degrees of freedom (DOF) data, providing a realistic simulation experience.</p>
 <figure>
     <img src="../../img/sr22.png" style="width: 1000px; height: auto;" alt="sensor">
-    <figcaption style="padding-top: 10px;"><b> Figure 2. Flight of SR22 model implemented in MORAI SIM: Air</b></figcaption>
+    <figcaption style="padding-top: 10px;"><b> Figure 2. Flight of SR22T model implemented in MORAI SIM: Air</b></figcaption>
 </figure>
 <p></p>
 <video controls>
   <source src="https://user-images.githubusercontent.com/120563672/226307319-c5462e1a-758f-4082-8b03-10d1062bda64.mp4">
 </video>
-<p style="font-size:16px;"><b> Figure 3. Flight control of SR22 with joystick in MORAI SIM: Air</b></p>
+<p style="font-size:16px;"><b> Figure 3. Flight control of SR22T with joystick in MORAI SIM: Air</b></p>
 
 <h3 id="reproduces-weather-and-time-variation-with-dynamic-environment">Reproduces weather and time variation with dynamic environment<a class="headerlink" href="#reproduces-weather-and-time-variation-with-dynamic-environment" title="Permanent link"></a></h3>
 <p>MORAI SIM: Air also includes a simulation of the environment and weather conditions, which affect the flight behavior and performance of the aerial vehicles. This allows users to test their autonomous flight systems under different conditions and scenarios.</p>
@@ -175,7 +175,7 @@ Additionally, MORAI SIM: Air implements the <a href="https://sketchfab.com/3d-mo
 <p style="font-size:16px;"><b> Figure 4. Reproduced video of weather and time condition changes in MORAI SIM: Air </b></p>
 
 <h3 id="integration-with-external-sensors-and-real-time-communication">Integration with external sensors and real-time communication<a class="headerlink" href="#integration-with-external-sensors-and-real-time-communication" title="Permanent link"></a></h3>
-<p>MORAI SIM: Air supports integration with a variety of external sensors commonly used in autonomous flight systems, including Camera, GNSS, IMU, and RADAR sensors. This enables users to test and validate the integration and performance of their sensors and systems in a virtual environment. <br></p>
+<p>MORAI SIM: Air supports integration with a variety of external sensors commonly used in autonomous flight systems, including Camera, GNSS, IMU, RADAR, and LiDAR sensors. This enables users to test and validate the integration and performance of their sensors and systems in a virtual environment. <br></p>
 <figure>
     <img src="../../img/Default_Layout_Sensor.png" alt="sensor" style="width: 1000px; height: auto;" title="Click to Enlage" onclick="window.open(this.src)">
     <figcaption style="padding-top: 10px;"><b> Figure 5. Sensor models provided by MORAI SIM: Air</b></figcaption>
