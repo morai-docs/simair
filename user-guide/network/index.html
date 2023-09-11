@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="MORAI Engineering Service Team" /><link rel="canonical" href="https://morai-docs.github.io/simair-cirrus/user-guide/network/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="MORAI Engineering Service Team" /><link rel="canonical" href="https://morai-docs.github.io/simair/user-guide/network/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Network Configuration - MORAI SIM Air - Cirrus</title>
+    <title>Network Configuration - MORAI SIM Air</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
         <link href="../../css/custom.css" rel="stylesheet" />
         <link href="../../css/extra.css" rel="stylesheet" />
@@ -18,17 +18,16 @@
         // Current page data
         var mkdocs_page_name = "Network Configuration";
         var mkdocs_page_input_path = "user-guide\\network.md";
-        var mkdocs_page_url = "/simair-cirrus/user-guide/network/";
+        var mkdocs_page_url = "/simair/user-guide/network/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/c++.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c++.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -37,10 +36,10 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> MORAI SIM Air - Cirrus
+          <a href="../.." class="icon icon-home"> MORAI SIM Air
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -97,7 +96,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-3-send-messages-from-external-server">Step 3: Send messages from external server</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-receive-control-messages-from-external-server">Step 3: Receive control messages from external server</a>
     </li>
         </ul>
     </li>
@@ -125,17 +124,21 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#data-information">Data Information</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#common-struct-information">Common struct Information</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#udp-recieve-messages">UDP Recieve Messages</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#cirrus_tx">Cirrus_tx</a>
+    <li class="toctree-l4"><a class="reference internal" href="#tx">Tx</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#cirrus_controlposition">Cirrus_ControlPosition</a>
+    <li class="toctree-l4"><a class="reference internal" href="#controlposition">ControlPosition</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#cirrus_braking">Cirrus_Braking</a>
+    <li class="toctree-l4"><a class="reference internal" href="#braking">Braking</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#cirrus_engine">Cirrus_Engine</a>
+    <li class="toctree-l4"><a class="reference internal" href="#engine">Engine</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vordmectrl">VORDMECtrl</a>
     </li>
         </ul>
     </li>
@@ -150,6 +153,10 @@
     <li class="toctree-l4"><a class="reference internal" href="#radar">Radar</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#lidar">Lidar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vordmeinfo">VORDMEInfo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vordmectrl_1">VORDMECtrl</a>
     </li>
         </ul>
     </li>
@@ -181,17 +188,16 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">MORAI SIM Air - Cirrus</a>
+          <a href="../..">MORAI SIM Air</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Using MORAI SIM Air &raquo;</li>
-      <li>Network Configuration</li>
+      <li class="breadcrumb-item active">Network Configuration</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://bitbucket.org/ejkim-morai/simair-cirrus-alpha/src/main/docs/user-guide/network.md" class="icon icon-bitbucket"> Edit on Bitbucket</a>
     </li>
   </ul>
   <hr/>
@@ -264,22 +270,22 @@ Configure the ROS2 to UDP communication environment and set the network of the s
 <h4 id="3-network-connection">3) Network connection<a class="headerlink" href="#3-network-connection" title="Permanent link"></a></h4>
 <p>Click <strong>Connect</strong> at the bottom <strong>PROTOCOL_SUB_GHOSTMODE</strong> or <strong>PROTOCOL_SUB_EXTERNALCTRL</strong>. <br>
 Then, it enters into a standby state in which a control message can be received.</p>
-<h3 id="step-3-send-messages-from-external-server">Step 3: Send messages from external server<a class="headerlink" href="#step-3-send-messages-from-external-server" title="Permanent link"></a></h3>
-<p>Send a message from the external server to the simulator using UDP to ROS2 Bridge.</p>
+<h3 id="step-3-receive-control-messages-from-external-server">Step 3: Receive control messages from external server<a class="headerlink" href="#step-3-receive-control-messages-from-external-server" title="Permanent link"></a></h3>
+<p>Receive messages from the external server using UDP to ROS2 Bridge.</p>
 <ul>
-<li>Send coordinates by playing rosbag file</li>
-<li>Send UDP packet</li>
+<li>Receive coordinates by playing rosbag file</li>
+<li>Receive UDP packet</li>
 </ul>
 <p>UDP messages received by each mode are as follows.</p>
 <ul>
 <li>GHOST MODE:<ul>
-<li><code>Cirrus_tx</code></li>
+<li><code>Tx</code></li>
 </ul>
 </li>
 <li>EXTERNAL CTRL: <ul>
-<li><code>CIRRUS_CONTROL_POSITION</code>   // 101  SIM -&gt; JSBSim</li>
-<li><code>CIRRUS_BRAKING</code>            // 102</li>
-<li><code>CIRRUS_ENGINE</code>             // 103</li>
+<li><code>ControlPosition</code>   </li>
+<li><code>Braking</code>            </li>
+<li><code>Engine</code>             </li>
 </ul>
 </li>
 </ul>
@@ -332,22 +338,36 @@ For details on the types and structure of UDP and ROS2 messages sent by the simu
 However, if the receiver uses Morai's UDP module, even if the defined max buffer is less than 65000, the separation logic works when trying to send a message larger than the max buffer.</p>
 <p>Ex) #define Max_buffer 1024: If the total data size to be sent exceeds 1024, it is sent separately.</p>
 <h4 id="header-information">Header Information<a class="headerlink" href="#header-information" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-c++">struct MoraiHeader
+<p><pre class="highlight"><code class="language-c++">struct Frame
 {
-    char header_name[12];         // MoraiHeader
-    int data_type;                 // data_type.h 참조
-    int data_size;                 // data size
+    uint32_t msg_frames;            // total frame count
+    uint32_t frame_size;            // frame size
+    uint32_t frame_pos;             // index * frame_size
+    uint32_t frame_index;           // 
+};
+
+struct Header
+{
+    uint32_t header_version;         //        
+    MsgType msg_type;               // message type
+    uint8_t protocol_type;          // protocol type  tcp, udp, ros ...
+    uint16_t send_count;            // send count        
+    Frame frame;
+    uint32_t msg_size;
+    uint8_t reserved_01;
+    uint8_t reserved_02;
 };</code></pre>
 <Br>
-<img src="../../img/header-1680492926933.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<img src="../../img/header.drawio0911-2.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="data-information">Data Information<a class="headerlink" href="#data-information" title="Permanent link"></a></h4>
 <p>The detailed data structure of the UDP message is described for each received and transmitted message as follows.</p>
 <ul>
-<li>4 recieve control messages: <ul>
-<li><code>Cirrus_tx</code></li>
-<li><code>Cirrus_ControlPosition</code></li>
-<li><code>Cirrus_Braking</code> </li>
-<li><code>Cirrus_Engine</code></li>
+<li>5 recieve control messages: <ul>
+<li><code>Tx</code></li>
+<li><code>ControlPosition</code></li>
+<li><code>Braking</code> </li>
+<li><code>Engine</code></li>
+<li><code>VORDMECtrl</code></li>
 </ul>
 </li>
 <li>5 send sensor messages: <ul>
@@ -359,8 +379,9 @@ However, if the receiver uses Morai's UDP module, even if the defined max buffer
 </ul>
 </li>
 </ul>
+<p>The overall message types are as follows.
 <pre class="highlight"><code class="language-c++">/*
-Morai Data type define
+Morai DATA type define
 
 */
 
@@ -369,26 +390,31 @@ Morai Data type define
 
 enum class MoraiDataType : uint32_t
 {
-    NONE = 0,
+    NONE = 0,                   /*!&lt; 0 */
 
-    SENSOR_GNSS,
-    SENSOR_IMAGE,
-    SENSOR_RADAR,
-    SENSOR_IMU,
-    SENSOR_LIDAR,
+    // morai -&gt; user
+    GNSS_SENSOR = 0x01,         /*!&lt; 1 */
+    IMAGE_SENSOR,               /*!&lt; 2 */
+    RADAR_SENSOR,               /*!&lt; 3 */
+    IMU_SENSOR,                 /*!&lt; 4 */
+    LIDAR_SENSOR,               /*!&lt; 5 */
+    COMPRESSED_IMAGE_SENSOR,    /*!&lt; 6 */
 
-    CIRRUS_TX = 0x64,               // 100  cirrus -&gt; morai
-    CIRRUS_CONTROL_POSITION,        // 101  SIM -&gt; JSBSim
-    CIRRUS_BRAKING,                 // 102  
-    CIRRUS_ENGINE,                  // 103
+    // user -&gt; morai
+    SET_TX,                  /*!&lt; 7 */
+    SET_CONTROL_POSITION,    /*!&lt; 8 */
+    SET_BRAKING,             /*!&lt; 9 */
+    SET_ENGINE,              /*!&lt; 10 */
 
-    LARGE_DATA = 0x3E8,             // 1000 for test
+    // Device
+    VORDME_INFO_DEVICE,         /*!&lt; 11 */
+    VORDME_CTRL_DEVICE,         /*!&lt; 12 */
 };
 
-#endif</code></pre>
-<p><Br>
-And the data structure of all receiving and sending UDP messages includes the following common <code>struct</code> type.</p>
-<pre class="highlight"><code>struct Ros_Timestamp
+#endif</code></pre></p>
+<h4 id="common-struct-information">Common struct Information<a class="headerlink" href="#common-struct-information" title="Permanent link"></a></h4>
+<p>And the data structure of all receiving and sending UDP messages includes the following common <code>struct</code> type.
+<pre class="highlight"><code class="language-C++">struct Ros_Timestamp
 {
     int32_t sec;
     uint32_t nanosec;
@@ -405,12 +431,11 @@ struct Sensor_NavSatStatus
 {
     int8_t status;
     uint16_t service;
-};
-</code></pre>
+};</code></pre></p>
 <h3 id="udp-recieve-messages">UDP Recieve Messages<a class="headerlink" href="#udp-recieve-messages" title="Permanent link"></a></h3>
-<p>The data structure and packets for each UDP message received by Morai SIM from the external Cirrus system are as follows.</p>
-<h4 id="cirrus_tx">Cirrus_tx<a class="headerlink" href="#cirrus_tx" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-C++">struct Cirrus_Tx
+<p>The data structure and packets for each UDP message received by Morai SIM from the external system are as follows.</p>
+<h4 id="tx">Tx<a class="headerlink" href="#tx" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-C++">struct Tx
 {
     float lon;              // deg
     float lat;              // deg
@@ -424,9 +449,9 @@ struct Sensor_NavSatStatus
     float sur_rudder;       // [-1 ~ 1]
 };</code></pre>
 <Br>
-<img src="../../img/cirrus_tx.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
-<h4 id="cirrus_controlposition">Cirrus_ControlPosition<a class="headerlink" href="#cirrus_controlposition" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-C++">struct Cirrus_ControlPosition
+<img src="../../img/tx.drawio-0911-3.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="controlposition">ControlPosition<a class="headerlink" href="#controlposition" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-C++">struct ControlPosition
 {
     float SetDaCmd;             // get_aileron              -1 ~ +1
     float SetRollTrimCmd;       // get_aileron_trim         (-0.1 ~ +0.1)
@@ -438,25 +463,32 @@ struct Sensor_NavSatStatus
     float SetDfCmd;             // get_flaps                0 ~ 1
 };</code></pre>
 <Br>
-<img src="../../img/Cirrus_ControlPosition.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
-<h4 id="cirrus_braking">Cirrus_Braking<a class="headerlink" href="#cirrus_braking" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-C++">struct Cirrus_Braking
+<img src="../../img/ControlPosition-0911.drawio.png" style="width: 1000px; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="braking">Braking<a class="headerlink" href="#braking" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-C++">struct Braking
 {
     float SetBrake;             // Left + Right             0~1   
 };</code></pre>
 <Br>
-<img src="../../img/Cirrus_Braking.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
-<h4 id="cirrus_engine">Cirrus_Engine<a class="headerlink" href="#cirrus_engine" title="Permanent link"></a></h4>
-<p><pre class="highlight"><code class="language-C++">struct Cirrus_Engine
+<img src="../../img/Braking.drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="engine">Engine<a class="headerlink" href="#engine" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-C++">struct Engine
 {
     float SetThrottleCmd;      // get_throttle(i)           0~1
 };</code></pre>
 <Br>
-<img src="../../img/Cirrus_Engine.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<img src="../../img/Engine.drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="vordmectrl">VORDMECtrl<a class="headerlink" href="#vordmectrl" title="Permanent link"></a></h4>
+<p><pre class="highlight"><code class="language-C++">struct VORDMECtrl
+{
+    int32_t frequency[100];
+};</code></pre>
+<Br>
+<img src="../../img/vordmectrl.drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h3 id="udp-send-messages">UDP Send Messages<a class="headerlink" href="#udp-send-messages" title="Permanent link"></a></h3>
-<p>The data structure and packet for each UDP message transmitted by MORA SIM to the external Cirrus system are as follows.</p>
+<p>The data structure and packet for each UDP message transmitted by MORA SIM to the external system are as follows.</p>
 <h4 id="gnss">GNSS<a class="headerlink" href="#gnss" title="Permanent link"></a></h4>
-<pre class="highlight"><code class="language-C++">struct Sensor_NavSatFix
+<p><pre class="highlight"><code class="language-C++">struct Sensor_NavSatFix
 {
     int id;
     Ros_HEADER header;
@@ -467,7 +499,8 @@ struct Sensor_NavSatStatus
     double position_covariance[9];
     uint8_t position_covariance_type;
 };</code></pre>
-<p><img src="../../img/gnss-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<br>
+<img src="../../img/gnss.drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="imu">IMU<a class="headerlink" href="#imu" title="Permanent link"></a></h4>
 <p><pre class="highlight"><code class="language-C++">struct Sensor_Imu
 {
@@ -480,8 +513,8 @@ struct Sensor_NavSatStatus
     geometry_msgs::Vector3 linear_acceleration;
     double liner_acceleration_covariance[9];
 };</code></pre>
-<Br>
-<img src="../../img/imu-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<br>
+<img src="../../img/imu-drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="camera-image">Camera (Image)<a class="headerlink" href="#camera-image" title="Permanent link"></a></h4>
 <p><pre class="highlight"><code class="language-C++">struct Sensor_Image
 {
@@ -496,7 +529,7 @@ struct Sensor_NavSatStatus
     uint8_t* data;
 };</code></pre>
 <Br>
-<img src="../../img/image-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<img src="../../img/image.drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="radar">Radar<a class="headerlink" href="#radar" title="Permanent link"></a></h4>
 <p><pre class="highlight"><code class="language-c++">struct Sensor_Radar 
 {
@@ -506,7 +539,7 @@ struct Sensor_NavSatStatus
     Radar_Detection detections[64];
 };</code></pre>
 <Br>
-<img src="../../img/radar-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<img src="../../img/radar.drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
 <h4 id="lidar">Lidar<a class="headerlink" href="#lidar" title="Permanent link"></a></h4>
 <p><pre class="highlight"><code class="language-c++">typedef struct PointField
 {
@@ -532,9 +565,26 @@ typedef struct SensorLidar
     bool is_dense;              // True if there are no invalid points
 } SENSRO_LIDAR;</code></pre>
 <Br></p>
-<p><img src="../../img/lidar-drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p><img src="../../img/Lidar.drawio-0911.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="vordmeinfo">VORDMEInfo<a class="headerlink" href="#vordmeinfo" title="Permanent link"></a></h4>
+<pre class="highlight"><code class="language-c++">struct VORDMEInfo
+{
+    int32_t hertz;
+    float latitude;
+    float longitude;
+    float angle;
+    double distance;
+};</code></pre>
+<p><img src="../../img/vordmeinfo.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<h4 id="vordmectrl_1">VORDMECtrl<a class="headerlink" href="#vordmectrl_1" title="Permanent link"></a></h4>
+<pre class="highlight"><code class="language-c++">struct VORDMECtrl
+{
+    int32_t frequency[100];
+};</code></pre>
+<p><img src="../../img/vordmectrl.drawio.png" style="width: auto; height: auto;" alt="sensor" title="Click to Enlage" onclick="window.open(this.src)"></p>
+<p><Br></p>
 <h3 id="ros2-send-messages">ROS2 Send Messages<a class="headerlink" href="#ros2-send-messages" title="Permanent link"></a></h3>
-<p>The type and data format for each ROS2 message transmitted by MORA SIM to the external Cirrus system are as follows.</p>
+<p>The type and data format for each ROS2 message transmitted by MORA SIM to the external system are as follows.</p>
 <h4 id="gnss_1">GNSS<a class="headerlink" href="#gnss_1" title="Permanent link"></a></h4>
 <ul>
 <li>
@@ -941,10 +991,6 @@ typedef struct SensorLidar
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-        <span>
-          <a href="https://bitbucket.org/ejkim-morai/simair-cirrus-alpha/src/" class="icon icon-bitbucket" style="color: #fcfcfc"> BitBucket</a>
-        </span>
-    
     
       <span><a href="../basic-controls/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
@@ -953,14 +999,15 @@ typedef struct SensorLidar
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
